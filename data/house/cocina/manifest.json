@@ -1,0 +1,68 @@
+{
+  "alignment" : {
+    "method" : "first",
+    "toZone" : [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "coordinateSystem" : "ARKit world space of this capture session: meters, +Y up (gravity), right-handed. Rooms, structure, mesh and photo poses all share it. For house sessions, the house's house.json maps it into the house frame: zone.toHouse × session.alignment.toZone.",
+  "createdAt" : "2026-10-30T05:28:54Z",
+  "depthFrameCount" : 336,
+  "depthFrames" : "depth\/frames.json",
+  "device" : "iPhone16,2",
+  "endedAt" : "2026-10-30T05:32:31Z",
+  "format" : "house-capture\/5",
+  "house" : "2026-10-29 23.24.50",
+  "houseName" : "Casa",
+  "mesh" : {
+    "anchors" : 0,
+    "faces" : 372589,
+    "file" : "mesh\/room-0.ply",
+    "vertices" : 201931
+  },
+  "photoCount" : 79,
+  "photos" : "photos\/photos.json",
+  "rooms" : [
+    {
+      "capturedAt" : "2026-10-30T05:32:23Z",
+      "coverage" : 0.69856477,
+      "detailPhotos" : 79,
+      "detailSeconds" : 208.13246297836304,
+      "doors" : 1,
+      "file" : "rooms\/room-0.json",
+      "index" : 0,
+      "mesh" : {
+        "anchors" : 0,
+        "faces" : 372589,
+        "file" : "mesh\/room-0.ply",
+        "vertices" : 201931
+      },
+      "name" : "Kitchen",
+      "objects" : 16,
+      "openings" : 0,
+      "photoCoverage" : 70,
+      "usdz" : "rooms\/room-0.usdz",
+      "walls" : 5,
+      "windows" : 1
+    }
+  ],
+  "sceneReconstruction" : "ARRoomCaptureConfiguration reconstruction=27 semantics=8 video=1920x1440 worldMap=false",
+  "session" : "2026-10-29 23.28.54",
+  "systemVersion" : "27.0.1",
+  "zone" : "area-2"
+}
