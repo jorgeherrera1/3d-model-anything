@@ -10,7 +10,7 @@ enum ScanImport {
           manifest.format.hasPrefix("house-capture/"),
           Set(manifest.rooms.map(\.index)).count == manifest.rooms.count,
           manifest.rooms.allSatisfy({ $0.index >= 0 }) else {
-      throw CaptureReadinessError(message: "Choose an extracted 3D Model Anything room or session folder containing manifest.json. In Files, tap the shared ZIP to extract it first.")
+      throw CaptureReadinessError(message: L("Choose an extracted 3D Model Anything room or session folder containing manifest.json. In Files, tap the shared ZIP to extract it first."))
     }
     let keys: [URLResourceKey] = [.isSymbolicLinkKey, .isRegularFileKey, .isDirectoryKey, .fileSizeKey]
     var enumerationError: Error?
@@ -21,7 +21,7 @@ enum ScanImport {
     for case let file as URL in files {
       let values = try file.resourceValues(forKeys: Set(keys))
       guard values.isSymbolicLink != true, values.isRegularFile == true || values.isDirectory == true else {
-        throw CaptureReadinessError(message: "This folder contains unsupported file links. Import an original 3D Model Anything export.")
+        throw CaptureReadinessError(message: L("This folder contains unsupported file links. Import an original 3D Model Anything export."))
       }
       bytes += Int64(values.fileSize ?? 0)
     }
@@ -29,10 +29,11 @@ enum ScanImport {
     try fm.createDirectory(at: HouseProject.root, withIntermediateDirectories: true)
     try CaptureReadiness.requireStorage(at: HouseProject.root, bytes: bytes + CaptureReadiness.reserve)
     let id = "import-" + UUID().uuidString
-    var house = HouseProject(id: id, name: manifest.rooms.count == 1 ? manifest.rooms[0].name : (manifest.houseName ?? "Imported rooms"), createdAt: Date())
+    let imported = L("Imported rooms")
+    var house = HouseProject(id: id, name: manifest.rooms.count == 1 ? manifest.rooms[0].name : (manifest.houseName ?? imported), createdAt: Date())
     var committed = false
     defer { if !committed { try? fm.removeItem(at: house.url) } }
-    let zone = house.addZone(named: "Imported rooms")
+    let zone = house.addZone(named: imported)
     for room in manifest.rooms {
       let sessionID = "room-\(room.index)"
       let bundle = try ScanBundle.create(in: house, id: sessionID)

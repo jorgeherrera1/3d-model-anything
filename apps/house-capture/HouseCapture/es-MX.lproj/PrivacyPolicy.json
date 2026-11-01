@@ -1,0 +1,34 @@
+{
+  "title": "Política de privacidad",
+  "updated": "7 de octubre de 2026",
+  "sections": [
+    {
+      "title": "Tus escaneos siguen bajo tu control",
+      "body": "3D Model Anything no pide una cuenta y no envía al desarrollador escaneos, fotos, planos de cuartos ni analítica de uso. La app no tiene publicidad, rastreo ni un servicio en la nube operado por el desarrollador."
+    },
+    {
+      "title": "Qué guarda la app",
+      "body": "Cuando escaneas, la app usa la cámara y el LiDAR para guardar en tu dispositivo la geometría del cuarto, fotos de referencia, fotogramas de profundidad, poses de la cámara y mapas de seguimiento. También guarda nombres de cuartos, horas de escaneo, información del dispositivo y del sistema, y diagnósticos técnicos como errores de seguimiento y condiciones de memoria o de temperatura. Las fotos y la geometría del cuarto pueden revelar detalles privados de lo que te rodea."
+    },
+    {
+      "title": "Permisos",
+      "body": "El acceso a la cámara se solicita cuando empiezas un escaneo. Puedes quitarlo en la app Settings del dispositivo. Importar, revisar, eliminar y compartir escaneos existentes no requiere acceso a la cámara. La app no pide acceso a Contactos, a la ubicación, al micrófono ni a la fototeca."
+    },
+    {
+      "title": "Compartir y Files",
+      "body": "Nada se comparte automáticamente. Cuando usas Compartir, iOS envía el ZIP exportado a la app, el servicio, el dispositivo o la persona que elijas. Las exportaciones pueden incluir fotos de referencia y otros datos grabados del escaneo, incluidos diagnósticos técnicos en las exportaciones de una sesión o de toda la casa. La malla de un cuarto puede incluir superficies cercanas grabadas en la misma sesión. Revisa el destino antes de compartir. Las copias que compartes o guardas en otro lugar quedan a cargo de ese destino y no se borran cuando eliminas el original."
+    },
+    {
+      "title": "Almacenamiento, copias de seguridad y eliminación",
+      "body": "Los escaneos se guardan en la carpeta Documents de la app, que también está en Files. La configuración de copias de seguridad de tu dispositivo puede incluir estos datos en una copia de seguridad de un dispositivo Apple. La app no sincroniza los escaneos con un servidor del desarrollador. Los cuartos y las versiones individuales de un escaneo que pasas a Eliminados recientemente siguen guardados hasta que los restaures o los elimines de forma permanente. Eliminar una casa quita de forma permanente sus datos de escaneo en el dispositivo. Las copias de seguridad del dispositivo y las copias exportadas se administran por separado."
+    },
+    {
+      "title": "Escaneos importados y exportaciones temporales",
+      "body": "Cuando importas una carpeta, la app copia los datos del cuarto al almacenamiento local. La carpeta original se queda donde la seleccionaste. Se usan archivos ZIP temporales para preparar lo que vas a compartir y se quitan al cerrar la hoja para compartir. Los envíos temporales que quedan abandonados se limpian después."
+    },
+    {
+      "title": "Cambios y soporte",
+      "body": "Esta política describe esta versión de 3D Model Anything. Si cambian las prácticas de datos de la app, las actualizaciones incluirán una política revisada. Los datos de contacto de soporte aparecen en la página de soporte del App Store de la app cuando ya esté publicada."
+    }
+  ]
+}

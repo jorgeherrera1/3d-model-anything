@@ -57,10 +57,10 @@ final class PLYMesh: @unchecked Sendable {
     case notPLY, unsupported(String), truncated, empty
     var errorDescription: String? {
       switch self {
-      case .notPLY: "Not a PLY file"
-      case .unsupported(let what): "Unsupported PLY: \(what)"
-      case .truncated: "The PLY file is truncated"
-      case .empty: "The mesh is empty"
+      case .notPLY: L("Not a PLY file")
+      case .unsupported(let what): Lf("Unsupported PLY: %@", what)
+      case .truncated: L("The PLY file is truncated")
+      case .empty: L("The mesh is empty")
       }
     }
   }
@@ -115,18 +115,18 @@ final class PLYMesh: @unchecked Sendable {
       guard let head = parts.first else { continue }
       switch head {
       case "format":
-        guard parts.count > 1, parts[1] == "binary_little_endian" else { throw LoadError.unsupported("format \(parts.dropFirst().joined(separator: " "))") }
+        guard parts.count > 1, parts[1] == "binary_little_endian" else { throw LoadError.unsupported(Lf("format %@", parts.dropFirst().joined(separator: " "))) }
       case "element":
         guard parts.count == 3 else { continue }
         current = String(parts[1])
         if current == "vertex" { vertexCount = Int(parts[2]) ?? 0 }
         if current == "face" { faceCount = Int(parts[2]) ?? 0 }
         if current != "vertex" && current != "face" && Int(parts[2]) != 0 {
-          throw LoadError.unsupported("element \(current)")
+          throw LoadError.unsupported(Lf("element %@", current))
         }
       case "property":
         if current == "vertex" {
-          guard parts.count == 3, let t = PType(parts[1]) else { throw LoadError.unsupported("vertex property \(line)") }
+          guard parts.count == 3, let t = PType(parts[1]) else { throw LoadError.unsupported(Lf("vertex property %@", String(line))) }
           vertexFields[String(parts[2])] = Field(type: t, offset: vertexStride)
           vertexStride += t.size
         } else if current == "face" {
@@ -135,10 +135,10 @@ final class PLYMesh: @unchecked Sendable {
               faceCountType = PType(parts[2])
               faceIndexType = PType(parts[3])
             } else {
-              throw LoadError.unsupported("second face list")
+              throw LoadError.unsupported(L("second face list"))
             }
           } else if parts.count == 3, let t = PType(parts[1]) {
-            if faceIndexType == nil { throw LoadError.unsupported("face property before the index list") }
+            if faceIndexType == nil { throw LoadError.unsupported(L("face property before the index list")) }
             faceExtra += t.size
           }
         }
@@ -146,9 +146,9 @@ final class PLYMesh: @unchecked Sendable {
       }
     }
     guard vertexCount > 0, faceCount > 0 else { throw LoadError.empty }
-    guard let fx = vertexFields["x"], let fy = vertexFields["y"], let fz = vertexFields["z"] else { throw LoadError.unsupported("no x/y/z") }
+    guard let fx = vertexFields["x"], let fy = vertexFields["y"], let fz = vertexFields["z"] else { throw LoadError.unsupported(L("no x/y/z")) }
     guard faceCountType == .u8, let idxType = faceIndexType, idxType == .u32 || idxType == .i32 else {
-      throw LoadError.unsupported("face index list must be uchar + (u)int")
+      throw LoadError.unsupported(L("face index list must be uchar + (u)int"))
     }
     let vertexBytes = vertexCount * vertexStride
     guard data.count >= bodyStart + vertexBytes + faceCount * 13 else { throw LoadError.truncated }
@@ -168,8 +168,7 @@ final class PLYMesh: @unchecked Sendable {
     var normals = [Float](repeating: 0, count: vertexCount * 3)
     var colors = [UInt8](repeating: 160, count: vertexCount * 4)
     var inRoom = [UInt8](repeating: 1, count: vertexCount)
-    guard fx.type == .f32 || fx.type == .f64 else { throw LoadError.unsupported("x must be float/double") }
-    // offsets (-1 = absent) and whether coordinates are doubles; plain scalars so the loop is fast at -Onone
+    guard fx.type == .f32 || fx.type == .f64 else { throw LoadError.unsupported(L("x must be float/double")) }
     let isDouble = fx.type == .f64
     let ox = fx.offset, oy = fy.offset, oz = fz.offset
     let onx = hasNormals ? nfx!.offset : -1, ony = hasNormals ? nfy!.offset : -1, onz = hasNormals ? nfz!.offset : -1

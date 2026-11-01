@@ -18,7 +18,10 @@ struct FieldworkRoomScreen: View {
   @State private var historyOpen = false
   private var room: HouseProject.Room? { house?.rooms.first { $0.id == roomID } }
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     ScrollView {
       if let house, let room {
         VStack(alignment: .leading, spacing: 22) {
@@ -26,7 +29,7 @@ struct FieldworkRoomScreen: View {
             FieldworkEyebrow(text: "Saved room")
             Text(room.name).font(.largeTitle.weight(.bold)).tracking(-1)
             if let active = room.active {
-              Text("SCANNED " + active.capturedAt.formatted(date: .abbreviated, time: .shortened).uppercased())
+              Text(Lf("SCANNED %@", AppLanguage.current.scanDate(active.capturedAt, time: true)).uppercased())
                 .font(.system(.caption, design: .monospaced)).foregroundStyle(Fieldwork.secondary)
             }
           }
@@ -35,14 +38,14 @@ struct FieldworkRoomScreen: View {
               .id("\(active.session)/\(active.index)")
             let record = manifests[active.session]?.rooms.first { $0.index == active.index }
             HStack(alignment: .top, spacing: 28) {
-              metric(record?.photographedPercent.map { "\($0)%" } ?? "—", label: "photo detail")
+              metric(record?.photographedPercent.map { Lf("%lld%%", Int64($0)) } ?? "—", label: L("photo detail"))
               Rectangle().fill(Fieldwork.rule).frame(width: 0.5, height: 42)
-              metric(record?.detailPhotos.map(String.init) ?? "—", label: "detail photos")
+              metric(record?.detailPhotos.map(String.init) ?? "—", label: L("detail photos"))
               Spacer(minLength: 0)
             }
             VStack(spacing: 10) {
               Button { share(house.bundle(for: session), active.index, room.name) } label: {
-                Label(busy ? "Preparing room…" : "Share room", systemImage: "square.and.arrow.up")
+                Label(busy ? L("Preparing room…") : L("Share room"), systemImage: "square.and.arrow.up")
               }.buttonStyle(FieldworkButtonStyle()).disabled(busy)
               Button { onCapture(house.id, room.zone, nil, room.id) } label: {
                 Label("Continue scanning", systemImage: "viewfinder")
@@ -57,7 +60,7 @@ struct FieldworkRoomScreen: View {
               Label {
                 VStack(alignment: .leading, spacing: 4) {
                   Text("Scan history").foregroundStyle(Fieldwork.ink)
-                  Text("\(room.history.count) saved scan\(room.history.count == 1 ? "" : "s")")
+                  Text(Lp(room.history.count, "%lld saved scan", "%lld saved scans"))
                     .font(.caption).foregroundStyle(Fieldwork.secondary)
                 }
               } icon: { Image(systemName: "clock").foregroundStyle(Fieldwork.secondary).frame(width: 28) }
@@ -65,7 +68,7 @@ struct FieldworkRoomScreen: View {
             FieldworkRule()
             NavigationLink {
               RoomConnection(house: house, source: room, onSave: reload)
-            } label: { actionRow("Connect room", subtitle: "Match a doorway with another scan", icon: "link") }
+            } label: { actionRow(L("Connect room"), subtitle: L("Match a doorway with another scan"), icon: "link") }
             FieldworkRule()
             Text("Photo detail measures useful photography on observed surfaces. It is not the percentage of the room scanned.")
               .font(.caption).foregroundStyle(Fieldwork.secondary)
@@ -138,7 +141,7 @@ struct FieldworkRoomScreen: View {
     VStack(alignment: .leading, spacing: 18) {
       ForEach(Array(room.history.reversed().enumerated()), id: \.offset) { _, ref in
         VStack(alignment: .leading, spacing: 10) {
-          Text(ref.capturedAt.formatted(date: .abbreviated, time: .shortened)).font(.subheadline.weight(.semibold))
+          Text(AppLanguage.current.scanDate(ref.capturedAt, time: true)).font(.subheadline.weight(.semibold))
           if ref == room.active { Label("Active scan", systemImage: "checkmark.circle.fill").font(.caption).foregroundStyle(Fieldwork.orange) }
           ViewThatFits(in: .horizontal) {
             HStack { versionActions(house, room, ref) }
@@ -158,7 +161,7 @@ struct FieldworkRoomScreen: View {
       Button("Use this scan") { perform { _ = try HouseProject.modify(houseID) { $0.setActive(room: roomID, ref) } } }.buttonStyle(.bordered)
     }
     Button(role: .destructive) { deletingScan = ref } label: { Image(systemName: "trash").frame(minWidth: 32, minHeight: 32) }
-      .accessibilityLabel("Delete scan from \(ref.capturedAt.formatted())")
+      .accessibilityLabel(Lf("Delete scan from %@", AppLanguage.current.scanDate(ref.capturedAt, time: true)))
   }
   private func reload() {
     do {
@@ -192,7 +195,10 @@ private struct FieldworkRoomPreview: View {
   @State private var coverage = false
   @State private var expanded = false
   init(source: PreviewSource) { _model = StateObject(wrappedValue: PreviewModel(source: source)) }
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(spacing: 12) {
       Picker("Preview style", selection: $coverage) {
         Text("3D").tag(false)
@@ -209,7 +215,7 @@ private struct FieldworkRoomPreview: View {
       .frame(height: 280).clipped()
       .overlay(FieldworkCorners().stroke(Fieldwork.orange, lineWidth: 1.5).allowsHitTesting(false))
       HStack {
-        Text(coverage ? "Green surfaces have useful photos" : "Drag to rotate · pinch to zoom")
+        Text(coverage ? L("Green surfaces have useful photos") : L("Drag to rotate · pinch to zoom"))
           .font(.caption).foregroundStyle(Fieldwork.secondary)
         Spacer()
         Button {

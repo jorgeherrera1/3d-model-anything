@@ -1,0 +1,42 @@
+{
+  "title": "Ayuda y soporte",
+  "updated": "7 de octubre de 2026",
+  "sections": [
+    {
+      "title": "Dispositivos compatibles",
+      "body": "Para escanear se necesita un iPhone Pro o un iPad Pro con LiDAR y iOS o iPadOS 17 o posterior. Otros dispositivos compatibles pueden importar, ver y compartir escaneos existentes. No se necesita una app complementaria para Mac."
+    },
+    {
+      "title": "Escanear un cuarto",
+      "body": "Crea una casa, elige Escanear un cuarto y ponle un nombre al cuarto. Permite el acceso a la cámara cuando se te pida. Muévete despacio por el cuarto, con buena luz, y mantén los muebles y las paredes a la vista. Las fotos se guardan solas. Terminar cuarto conserva el escaneo disponible. Puedes detenerte antes de que todas las superficies tengan fotos útiles. Verifica las medidas antes de usarlas en un trabajo de precisión."
+    },
+    {
+      "title": "El acceso a la cámara está desactivado",
+      "body": "Abre Ayuda y privacidad → Abrir configuración de la app y activa Cámara. Si Cámara está restringida, revisa Screen Time o la política de administración del dispositivo. Los escaneos guardados siguen disponibles sin acceso a la cámara."
+    },
+    {
+      "title": "Importar un cuarto compartido",
+      "body": "Guarda en Files un ZIP de cuarto o de sesión de 3D Model Anything. Toca el ZIP en Files para extraerlo. En 3D Model Anything, toca el ícono de importar arriba a la izquierda y elige la carpeta extraída que contiene manifest.json. Si Files creó una carpeta exterior adicional, selecciona la carpeta interior que tiene ese archivo. No se puede importar una carpeta de toda la casa. Comparte un cuarto o una sesión. Cada importación crea una casa nueva y deja sin cambios la carpeta original."
+    },
+    {
+      "title": "Compartir y AirDrop",
+      "body": "Abre un cuarto y toca Compartir cuarto. Luego elige AirDrop u otro destino en la hoja para compartir del sistema. Esto comparte el plano, la malla, las fotos y los datos de profundidad del escaneo activo. Usa Historial de escaneos → Usar este escaneo para compartir una versión anterior. El menú Opciones de la casa puede compartir toda la casa, y Sesiones puede compartir una sesión de captura completa. No se necesita un receptor, una app complementaria ni una cuenta."
+    },
+    {
+      "title": "Detalle de foto y vistas previas",
+      "body": "Detalle de foto mide la fotografía útil sobre las superficies observadas de la malla, no qué tanto del cuarto ya se escaneó. Gira la vista previa 3D o cambia a Detalle de foto para revisar los huecos. Al principio, un escaneo puede verse con colores de arcilla mientras termina el coloreado con las fotos. La malla guardada puede incluir geometría cercana."
+    },
+    {
+      "title": "Escaneos interrumpidos y almacenamiento",
+      "body": "La grabación se pausa cuando la app pasa a segundo plano o cuando el seguimiento deja de ser confiable. Vuelve a la app, recupera la vista anterior y reanuda cuando estés listo. Si el seguimiento no se recupera, termina el cuarto y conserva lo capturado. Deja al menos 500 MB libres antes de escanear. Los escaneos largos necesitan más. La app pausa las grabaciones nuevas cuando el almacenamiento disponible baja de 200 MB, para que puedas terminar y liberar espacio. Estas revisiones no garantizan que se guarde el escaneo si otras apps consumen el espacio que queda."
+    },
+    {
+      "title": "Recuperar o quitar un cuarto",
+      "body": "Opciones del cuarto → Eliminar cuarto lo mueve a Eliminados recientemente, debajo de la lista de cuartos de la casa. Ahí puedes restaurarlo o eliminarlo de forma permanente. Eliminar una casa quita sus escaneos de forma permanente después de la confirmación. Los archivos compartidos y las copias de seguridad del dispositivo son copias aparte."
+    },
+    {
+      "title": "Si algo sale mal",
+      "body": "Conserva el escaneo original. Anota el modelo del dispositivo, la versión de iOS o iPadOS, la versión de la app (aparece en Ayuda y privacidad), la acción que falló y el error exacto. No incluyas fotos privadas del cuarto ni exportaciones del escaneo en un mensaje de soporte, a menos que decidas compartirlas. Usa el contacto de soporte de la ficha publicada en el App Store."
+    }
+  ]
+}

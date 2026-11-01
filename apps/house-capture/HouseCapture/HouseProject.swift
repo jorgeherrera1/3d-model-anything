@@ -89,6 +89,8 @@ extension HouseProject {
 
   static func create(name: String) throws -> HouseProject {
     let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.calendar = Calendar(identifier: .gregorian)
     formatter.dateFormat = "yyyy-MM-dd HH.mm.ss"
     var house = HouseProject(id: formatter.string(from: Date()), name: name, createdAt: Date())
     for dir in ["zones", "sessions"] {

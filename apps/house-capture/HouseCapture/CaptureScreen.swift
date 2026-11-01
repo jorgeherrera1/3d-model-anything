@@ -14,7 +14,10 @@ struct CaptureScreen: View {
 
   private var scanning: Bool { controller.phase == .scanning }
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     ZStack {
       ARViewContainer(view: controller.scanView.view).ignoresSafeArea()
 
@@ -34,7 +37,7 @@ struct CaptureScreen: View {
           VStack(alignment: .leading, spacing: 6) {
             Label("Recovering your position", systemImage: "viewfinder.trianglebadge.exclamationmark")
               .font(.headline)
-            Text(issue.message).font(.subheadline)
+            Text(recoveryCopy(issue)).font(.subheadline)
             Text("Recording is paused. Saved photos are safe; capture resumes when your position is stable.").font(.caption)
             if let url = controller.recoveryPhoto, let image = UIImage(contentsOfFile: url.path) {
               Image(uiImage: image).resizable().scaledToFit().frame(height: 100)
@@ -62,11 +65,11 @@ struct CaptureScreen: View {
     }
     .confirmationDialog("Leave this session?", isPresented: $confirmClose, titleVisibility: .visible) {
       if !controller.rooms.isEmpty && controller.phase == .betweenRooms {
-        Button("Save \(controller.rooms.count) room\(controller.rooms.count == 1 ? "" : "s") and finish") {
+        Button(Lp(controller.rooms.count, "Save %lld room and finish", "Save %lld rooms and finish")) {
           Task { await controller.finishSession() }
         }
       }
-      Button(controller.rooms.isEmpty ? "Discard session" : "Discard session and its \(controller.rooms.count) room\(controller.rooms.count == 1 ? "" : "s")", role: .destructive) {
+      Button(controller.rooms.isEmpty ? L("Discard session") : Lp(controller.rooms.count, "Discard session and its %lld room", "Discard session and its %lld rooms"), role: .destructive) {
         controller.abandon()
         onClose()
       }
@@ -109,16 +112,16 @@ struct CaptureScreen: View {
               Text("Photo detail").font(.system(size: 9, weight: .semibold))
             }
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Photo detail, \(controller.stats.percent) percent of observed surfaces")
+            .accessibilityLabel(Lf("Photo detail, %lld percent of observed surfaces", Int64(controller.stats.percent)))
           }
           VStack(alignment: .trailing, spacing: 2) {
             if scanning {
               Text(controller.roomName).font(.headline)
-              Text(controller.meshReady ? "\(controller.coverage.walls.count) walls measured" : "Starting LiDAR…")
+              Text(controller.meshReady ? Lp(controller.coverage.walls.count, "%lld wall measured", "%lld walls measured") : L("Starting LiDAR…"))
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.secondary)
             }
-            Text("\(controller.rooms.count) room\(controller.rooms.count == 1 ? "" : "s") · \(controller.photoCount) photos")
+            Text("\(Lp(controller.rooms.count, "%lld room", "%lld rooms")) · \(Lp(controller.photoCount, "%lld photo", "%lld photos"))")
               .font(.caption.monospacedDigit())
             if controller.phase != .relocalizing {
               HStack(spacing: 6) {
@@ -182,9 +185,9 @@ struct CaptureScreen: View {
     case .scanning:
       if controller.paused { pausedPanel } else { scanControls }
     case .finishingRoom:
-      status("Saving \(controller.roomName)…")
+      status(Lf("Saving %@…", controller.roomName))
     case .finishing:
-      status(controller.finishingStep.isEmpty ? "Saving…" : controller.finishingStep)
+      status(controller.finishingStep.isEmpty ? L("Saving…") : controller.finishingStep)
     case .done:
       done
     case .failed(let message):
@@ -202,7 +205,7 @@ struct CaptureScreen: View {
     panel {
       if controller.rooms.isEmpty {
         if controller.alignment.method == "relocalized" {
-          Text("You're lined up with \(controller.zoneName). The faint green is what you scanned before\(controller.priorPhotoCount > 0 ? "; surfaces its \(controller.priorPhotoCount) photos already cover start out green" : ""). Scan a new room, or rescan one to replace it.")
+          Text(linedUpCopy)
             .font(.subheadline)
         } else {
           Text("Scan each room once: as you move, a triangle mesh appears. **Green** means good photo coverage, including aligned earlier scans. **Red** needs more photos. Areas without triangles still need scanning. The white outlines are the walls, doors and windows being measured. **Photo detail** measures photography on surfaces already seen by LiDAR; it is not the percentage of the room scanned. Save and review for missing areas.")
@@ -213,7 +216,7 @@ struct CaptureScreen: View {
           .frame(height: 150)
           .frame(maxWidth: .infinity)
         if let last = controller.rooms.last {
-          Text("\(last.name): \(last.photographedPercent.map { "\($0)% photo detail" } ?? "not measured") · \(last.detailPhotos ?? 0) photos\(last.mesh == nil ? " · no mesh" : "")")
+          Text(roomSummary(last))
             .font(.footnote)
         }
         Button("Review saved room in 3D") { reviewing = true }.buttonStyle(.borderedProminent)
@@ -246,7 +249,11 @@ struct CaptureScreen: View {
             .controlSize(.small)
             .tint(controller.roomName == name ? .accentColor : .green)
           }
-          ForEach(Self.roomSuggestions.filter { n in !scannedHere(n) && !controller.existingRoomNames.contains { HouseProject.roomKey($0) == HouseProject.roomKey(n) } }, id: \.self) { name in
+          ForEach(Self.roomSuggestions.filter { key in
+            let name = L(key)
+            return !scannedHere(name) && !controller.existingRoomNames.contains { HouseProject.roomKey($0) == HouseProject.roomKey(name) }
+          }, id: \.self) { key in
+            let name = L(key)
             Button(name) { controller.selectedRoomID = nil; controller.roomName = name }
               .buttonStyle(.bordered)
               .controlSize(.small)
@@ -255,7 +262,7 @@ struct CaptureScreen: View {
         }
       }
       if controller.selectedRoomID != nil {
-        Text("Rescan: this becomes \(controller.roomName)'s active scan (the old one stays in its history).")
+        Text(Lf("Rescan: this becomes %@'s active scan (the old one stays in its history).", controller.roomName))
           .font(.caption2)
           .foregroundStyle(.secondary)
       }
@@ -266,7 +273,7 @@ struct CaptureScreen: View {
       Button {
         controller.startRoom()
       } label: {
-        Label(controller.canStartRoom ? "Scan \(controller.roomName)" : "Name the room to start", systemImage: "viewfinder")
+        Label(controller.canStartRoom ? Lf("Scan %@", controller.roomName) : L("Name the room to start"), systemImage: "viewfinder")
           .frame(maxWidth: .infinity)
       }
       .buttonStyle(.borderedProminent)
@@ -287,6 +294,33 @@ struct CaptureScreen: View {
     controller.rooms.contains { HouseProject.roomKey($0.name) == HouseProject.roomKey(name) }
   }
 
+  private var linedUpCopy: String {
+    if controller.priorPhotoCount > 0 {
+      return Lf("You're lined up with %@. The faint green is what you scanned before; surfaces its %@ already cover start out green. Scan a new room, or rescan one to replace it.", controller.zoneName, Lp(controller.priorPhotoCount, "%lld photo", "%lld photos"))
+    }
+    return Lf("You're lined up with %@. The faint green is what you scanned before. Scan a new room, or rescan one to replace it.", controller.zoneName)
+  }
+
+  private func roomSummary(_ last: RoomRecord) -> String {
+    let detail = last.photographedPercent.map { Lf("%lld%% photo detail", Int64($0)) } ?? L("not measured")
+    let photos = Lp(last.detailPhotos ?? 0, "%lld photo", "%lld photos")
+    let mesh = last.mesh == nil ? L(" · no mesh") : ""
+    return Lf("%@: %@ · %@%@", last.name, detail, photos, mesh)
+  }
+
+  private func recoveryCopy(_ issue: TrackingRecovery.Issue) -> String {
+    switch issue {
+    case .starting: L("Finding your position. Aim at a well-lit doorway or furniture and move slowly.")
+    case .motion: L("Slow down and hold steady. Keep a familiar doorway or furniture in view.")
+    case .features: L("Aim at well-lit furniture, shelves or a doorway. Blank walls are hard to track.")
+    case .relocalizing: L("Return to an area you just scanned and pan slowly so the phone can recognize it.")
+    case .unavailable: L("Position tracking is unavailable. Hold steady with the room in view.")
+    case .interrupted: L("Camera interrupted. Return to the app, then aim at an area you already scanned.")
+    case .stalled: L("Camera updates have stalled. Hold steady. If this persists, finish the room to save what you have.")
+    case .settling: L("Position found. Hold steady for a moment while tracking settles.")
+    }
+  }
+
   private var pausedPanel: some View {
     panel {
       Label("Paused", systemImage: "pause.circle.fill").font(.headline)
@@ -296,7 +330,7 @@ struct CaptureScreen: View {
       Button {
         controller.resume()
       } label: {
-        Label("Resume \(controller.roomName)", systemImage: "play.fill").frame(maxWidth: .infinity)
+        Label(Lf("Resume %@", controller.roomName), systemImage: "play.fill").frame(maxWidth: .infinity)
       }
       .buttonStyle(.borderedProminent)
       .controlSize(.large)
@@ -313,9 +347,9 @@ struct CaptureScreen: View {
           Text(room.name)
           Spacer()
           if let pc = room.photographedPercent {
-            Text("\(pc)% photo detail").font(.caption.monospacedDigit().weight(.semibold)).foregroundStyle(pc >= 85 ? .green : .orange)
+            Text(Lf("%lld%% photo detail", Int64(pc))).font(.caption.monospacedDigit().weight(.semibold)).foregroundStyle(pc >= 85 ? .green : .orange)
           }
-          Text("\(room.walls)w \(room.doors + room.openings)d \(room.windows)win \(room.objects)obj")
+          Text(Lf("%lldw %lldd %lldwin %lldobj", Int64(room.walls), Int64(room.doors + room.openings), Int64(room.windows), Int64(room.objects)))
             .font(.caption.monospacedDigit())
             .foregroundStyle(.secondary)
         }
@@ -328,7 +362,7 @@ struct CaptureScreen: View {
       if controller.captureReady {
         tip(controller.quality.ready ? controller.quality.message : (controller.instruction ?? controller.quality.message))
         if controller.coveragePlateau && !controller.quality.ready {
-          tip("Photo detail isn't improving much. You can save and review what you have; you don't need to keep circling.")
+          tip(L("Photo detail isn't improving much. You can save and review what you have; you don't need to keep circling."))
         }
         if controller.captureBudget.constrained { Text("Reducing background capture to keep scanning responsive.").font(.caption).foregroundStyle(.white) }
       }
@@ -408,19 +442,22 @@ private struct RelocalizationPanel: View {
 
   private var r: CaptureController.Relocalization { controller.reloc }
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(alignment: .leading, spacing: 10) {
       HStack(alignment: .firstTextBaseline) {
         Text(title).font(.headline)
         Spacer()
-        if r.seconds > 0 { Text("\(r.seconds) s").font(.caption.monospacedDigit()).foregroundStyle(.secondary) }
+        if r.seconds > 0 { Text(Lf("%lld s", Int64(r.seconds))).font(.caption.monospacedDigit()).foregroundStyle(.secondary) }
       }
       Text(message).font(.subheadline)
       if r.stage == .checking {
         ProgressView(value: Double(r.progress))
           .tint(.green)
         if let c = r.check, c.known > 0 {
-          Text("\(Int((c.wallKnown > 0 ? c.wallFraction : c.inlierFraction) * 100))% of the walls you see match\(c.median.map { String(format: " · off by %.1f cm", $0 * 100) } ?? "")")
+          Text(Lf("%lld%% of the walls you see match%@", Int64((c.wallKnown > 0 ? c.wallFraction : c.inlierFraction) * 100), c.median.map { Lf(" · off by %.1f cm", $0 * 100) } ?? ""))
             .font(.caption.monospacedDigit())
             .foregroundStyle(.secondary)
           if c.needsCorner {
@@ -476,23 +513,23 @@ private struct RelocalizationPanel: View {
 
   private var title: String {
     switch r.stage {
-    case .loadingMap: "Loading \(controller.zoneName)…"
-    case .searching: "Continue in \(controller.zoneName)"
-    case .checking: "Found it: checking the fit"
-    case .mismatch: "This doesn't line up"
-    case .done: "Lined up"
-    case .failed: "Can't continue from the saved map"
+    case .loadingMap: Lf("Loading %@…", controller.zoneName)
+    case .searching: Lf("Continue in %@", controller.zoneName)
+    case .checking: L("Found it: checking the fit")
+    case .mismatch: L("This doesn't line up")
+    case .done: L("Lined up")
+    case .failed: L("Can't continue from the saved map")
     }
   }
 
   private var message: String {
     switch r.stage {
-    case .loadingMap: "Reading the saved map."
-    case .searching: "Point at an area you already scanned and move slowly. When the phone recognizes it, your earlier scan appears in green."
-    case .checking: "Hold on the area you scanned before. The green should sit right on the walls and furniture."
-    case .mismatch: "The phone thinks it knows this place, but the green doesn't sit on the real surfaces. Try again from a spot with lots of detail, or start unaligned."
+    case .loadingMap: L("Reading the saved map.")
+    case .searching: L("Point at an area you already scanned and move slowly. When the phone recognizes it, your earlier scan appears in green.")
+    case .checking: L("Hold on the area you scanned before. The green should sit right on the walls and furniture.")
+    case .mismatch: L("The phone thinks it knows this place, but the green doesn't sit on the real surfaces. Try again from a spot with lots of detail, or start unaligned.")
     case .done: ""
-    case .failed(let m): m + " You can still scan: the session gets its own frame. Use Connect room afterward to align it with another room."
+    case .failed(let m): m + " " + L("You can still scan: the session gets its own frame. Use Connect room afterward to align it with another room.")
     }
   }
 
@@ -508,7 +545,6 @@ private struct RelocalizationPanel: View {
   }
 }
 
-/// One earlier photo, loaded off main
 private struct LandmarkThumb: View {
   let url: URL
   @State private var image: CGImage?
@@ -529,15 +565,17 @@ private struct LandmarkThumb: View {
   }
 }
 
-/// "Relocalized ±2 cm" / "Unaligned" / "First in area"
 struct AlignmentBadge: View {
   var alignment: HouseProject.Alignment
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     let (text, color): (String, Color) = switch alignment.method {
-    case "first": ("New scan", .blue)
-    case "relocalized": (alignment.residualMeters.map { String(format: "Matched ±%.1f cm", $0 * 100) } ?? "Matched", .green)
-    case "unaligned": ("Not connected yet", .orange)
-    case "manual", "icp": ("Connected", .teal)
+    case "first": (L("New scan"), .blue)
+    case "relocalized": (alignment.residualMeters.map { Lf("Matched ±%.1f cm", $0 * 100) } ?? L("Matched"), .green)
+    case "unaligned": (L("Not connected yet"), .orange)
+    case "manual", "icp": (L("Connected"), .teal)
     default: (alignment.method, .gray)
     }
     Text(text)
@@ -548,15 +586,18 @@ struct AlignmentBadge: View {
   }
 }
 
-/// ARKit's world-mapping status: green once the map is good enough to save
 private struct MapStatusDot: View {
   var status: ARFrame.WorldMappingStatus
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
-    let (text, color): (String, Color) = switch status {
-    case .mapped: ("map", .green)
-    case .extending: ("map", .yellow)
-    case .limited: ("map", .orange)
-    default: ("map", .gray)
+    let _ = languageChoice.language
+    let text = L("map")
+    let color: Color = switch status {
+    case .mapped: .green
+    case .extending: .yellow
+    case .limited: .orange
+    default: .gray
     }
     HStack(spacing: 3) {
       Circle().fill(color).frame(width: 6, height: 6)
@@ -565,10 +606,12 @@ private struct MapStatusDot: View {
   }
 }
 
-/// Percent photographed, as a ring
 struct CoverageRing: View {
   var percent: Int
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     ZStack {
       Circle().stroke(.white.opacity(0.25), lineWidth: 5)
       Circle()
@@ -576,15 +619,18 @@ struct CoverageRing: View {
         .stroke(percent >= 85 ? Color.green : percent >= 50 ? .orange : .red, style: StrokeStyle(lineWidth: 5, lineCap: .round))
         .rotationEffect(.degrees(-90))
         .animation(.easeOut(duration: 0.4), value: percent)
-      Text("\(percent)%").font(.caption2.monospacedDigit().weight(.bold))
+      Text(Lf("%lld%%", Int64(percent))).font(.caption2.monospacedDigit().weight(.bold))
     }
   }
 }
 
 private struct Legend: View {
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(alignment: .leading, spacing: 2) {
-      ForEach([(Color.red, "needs photos"), (.green, "captured")], id: \.1) { color, label in
+      ForEach([(Color.red, L("needs photos")), (.green, L("captured"))], id: \.1) { color, label in
         HStack(spacing: 4) {
           Circle().fill(color).frame(width: 7, height: 7)
           Text(label).font(.system(size: 9))

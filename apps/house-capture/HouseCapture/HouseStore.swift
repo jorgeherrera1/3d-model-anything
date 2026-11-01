@@ -65,7 +65,7 @@ extension HouseProject {
     var n = zones.count + 1
     while zones.contains(where: { $0.id == "area-\(n)" }) { n += 1 }
     let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
-    let zone = Zone(id: "area-\(n)", name: trimmed.isEmpty ? "Area \(n)" : trimmed, worldMap: nil, aligned: zones.isEmpty)
+    let zone = Zone(id: "area-\(n)", name: trimmed.isEmpty ? Lf("Area %lld", Int64(n)) : trimmed, worldMap: nil, aligned: zones.isEmpty)
     zones.append(zone)
     return zone
   }
@@ -102,7 +102,7 @@ extension HouseProject {
       return rooms[ri]
     }
     let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
-    let room = Room(id: UUID().uuidString, name: clean.isEmpty ? "Room \(index + 1)" : clean, zone: zone, active: ref, history: [ref])
+    let room = Room(id: UUID().uuidString, name: clean.isEmpty ? Lf("Room %lld", Int64(index + 1)) : clean, zone: zone, active: ref, history: [ref])
     rooms.append(room)
     return room
   }
@@ -183,7 +183,7 @@ extension HouseProject {
   static func deleteSession(houseID: String, sessionID: String) throws {
     let before = try load(id: houseID)
     guard !before.deletedRooms.contains(where: { $0.room.history.contains { $0.session == sessionID } }) else {
-      throw CocoaError(.fileWriteUnknown, userInfo: [NSLocalizedDescriptionKey: "Restore or permanently delete the rooms in Recently Deleted before removing this session."])
+      throw CocoaError(.fileWriteUnknown, userInfo: [NSLocalizedDescriptionKey: L("Restore or permanently delete the rooms in Recently Deleted before removing this session.")])
     }
     let house = try modify(houseID) { $0.removeSession(sessionID) }
     let folder = house.url.appendingPathComponent("sessions/\(sessionID)", isDirectory: true)

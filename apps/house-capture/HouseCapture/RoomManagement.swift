@@ -48,7 +48,7 @@ extension HouseProject {
     guard let room = h.rooms.first(where: { $0.id == roomID }), room.history.contains(ref) else { return }
     var removed = room
     removed.id = UUID().uuidString
-    removed.name += " (older scan)"
+    removed.name += L(" (older scan)")
     removed.active = ref
     removed.history = [ref]
     removed.zone = h.session(ref.session)?.zone ?? room.zone

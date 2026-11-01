@@ -483,11 +483,11 @@ private struct PLYFile {
   init(url: URL) throws {
     data = try Data(contentsOf: url, options: .alwaysMapped)
     guard let end = data.range(of: Data("end_header\n".utf8), in: 0..<min(data.count, 8192)) else {
-      throw Failure(message: "no PLY header")
+      throw Failure(message: L("no PLY header"))
     }
     bodyStart = end.upperBound
     let header = String(decoding: data[0..<end.lowerBound], as: UTF8.self)
-    guard header.contains("format binary_little_endian") else { throw Failure(message: "not binary little-endian") }
+    guard header.contains("format binary_little_endian") else { throw Failure(message: L("not binary little-endian")) }
     var element = ""
     var vCount = 0, fCount = 0
     var vProps: [(String, String)] = []
@@ -504,7 +504,7 @@ private struct PLYFile {
           vProps.append((parts[1], parts[2]))
         } else if element == "face" {
           if parts.count >= 5, parts[1] == "list" {
-            guard let c = Self.size(of: parts[2]), let i = Self.size(of: parts[3]), i == 4 || i == 2 else { throw Failure(message: "unsupported face list") }
+            guard let c = Self.size(of: parts[2]), let i = Self.size(of: parts[3]), i == 4 || i == 2 else { throw Failure(message: L("unsupported face list")) }
             countSize = c; indexSize = i; sawList = true
           } else if parts.count >= 3, let s = Self.size(of: parts[1]) {
             if sawList { fAfter += s } else { fBefore += s }
@@ -515,21 +515,21 @@ private struct PLYFile {
     var offset = 0
     var named: [String: Int] = [:]
     for (type, name) in vProps {
-      guard let s = Self.size(of: type) else { throw Failure(message: "unsupported vertex property \(type)") }
+      guard let s = Self.size(of: type) else { throw Failure(message: Lf("unsupported vertex property %@", type)) }
       if ["x", "y", "z", "nx", "ny", "nz"].contains(name) {
-        guard type == "float" || type == "float32" else { throw Failure(message: "\(name) isn't float") }
+        guard type == "float" || type == "float32" else { throw Failure(message: Lf("%@ isn't float", name)) }
         named[name] = offset
       }
       offset += s
     }
-    guard let x = named["x"], let y = named["y"], let z = named["z"] else { throw Failure(message: "no x/y/z") }
-    guard fCount == 0 || sawList else { throw Failure(message: "no face list") }
+    guard let x = named["x"], let y = named["y"], let z = named["z"] else { throw Failure(message: L("no x/y/z")) }
+    guard fCount == 0 || sawList else { throw Failure(message: L("no face list")) }
     vertexStride = offset
     offsets = (x, y, z, named["nx"], named["ny"], named["nz"])
     faceLayout = (fBefore, countSize, indexSize, fAfter)
     vertexCount = vCount
     faceCount = fCount
-    guard bodyStart + vertexCount * vertexStride <= data.count else { throw Failure(message: "truncated vertices") }
+    guard bodyStart + vertexCount * vertexStride <= data.count else { throw Failure(message: L("truncated vertices")) }
   }
 
   func forEachVertex(_ body: (Int, SIMD3<Float>, SIMD3<Float>?) -> Void) {

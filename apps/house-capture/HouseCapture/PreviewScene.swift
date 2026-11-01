@@ -10,12 +10,12 @@ enum RenderStyle: String, CaseIterable, Identifiable {
 
   var title: String {
     switch self {
-    case .photo: "Photo"
-    case .coverage: "Coverage"
-    case .sessions: "Sessions"
-    case .clay: "Clay"
-    case .wireframe: "Mesh"
-    case .roomPlan: "RoomPlan"
+    case .photo: L("Photo")
+    case .coverage: L("Coverage")
+    case .sessions: L("Sessions")
+    case .clay: L("Clay")
+    case .wireframe: L("Mesh")
+    case .roomPlan: L("RoomPlan")
     }
   }
 
