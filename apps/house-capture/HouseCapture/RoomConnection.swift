@@ -48,16 +48,19 @@ struct RoomConnection: View {
     result.zones[zi].aligned = true
     return result
   }
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     Form {
       Section {
         Text("Match the same doorway in two rooms. If it wasn't captured in both scans, continue scanning from a saved room and include both sides of the doorway.")
-        Picker("Connect \(source.name) to", selection: $targetID) {
+        Picker(Lf("Connect %@ to", source.name), selection: $targetID) {
           Text("Choose room").tag("")
           ForEach(house.rooms.filter { $0.id != source.id }) { Text($0.name).tag($0.id) }
         }
         DoorwayMap(house: house, room: source, doors: sourceDoors, selected: $sourceDoorID)
-        doorPicker("Doorway in \(source.name)", doors: sourceDoors, selection: $sourceDoorID)
+        doorPicker(Lf("Doorway in %@", source.name), doors: sourceDoors, selection: $sourceDoorID)
         if let target { DoorwayMap(house: house, room: target, doors: targetDoors, selected: $targetDoorID) }
         doorPicker("Doorway in other room", doors: targetDoors, selection: $targetDoorID)
         Text("Tap the matching doorway numbers on each room plan. Widths help distinguish similar openings.").font(.caption)
@@ -69,7 +72,7 @@ struct RoomConnection: View {
         Button("Preview connection") { previewing = true; checked = true }.disabled(candidate == nil)
         Text("Check walls, floor levels, and which side of the doorway each room occupies. This is a manual placement, not an automatic match.").font(.caption)
         let companions = house.rooms.filter { $0.zone == source.zone && $0.id != source.id }.map(\.name)
-        if !companions.isEmpty { Text("Also moves with this room: " + companions.joined(separator: ", ")).font(.caption) }
+        if !companions.isEmpty { Text(Lf("Also moves with this room: %@", companions.joined(separator: ", "))).font(.caption) }
         Button("Save connection") {
           guard let candidate, let ref = source.active, let session = house.session(ref.session), let zone = candidate.zone(session.zone) else { return }
           do {
@@ -96,7 +99,7 @@ struct RoomConnection: View {
     Picker(title, selection: selection) {
       Text("Choose doorway").tag("")
       ForEach(Array(doors.enumerated()), id: \.element.id) { i, door in
-        Text(String(format: "Doorway %d · %.2f m wide", i+1, door.width)).tag(door.id)
+        Text(Lf("Doorway %lld · %.2f m wide", Int64(i + 1), door.width)).tag(door.id)
       }
     }
   }
@@ -117,7 +120,10 @@ private struct DoorwayMap: View {
       return (center-half, center+half)
     }
   }
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     let lines = segments
     let points = lines.flatMap { [$0.0, $0.1] } + doors.map { SIMD2($0.transform.columns.3.x, $0.transform.columns.3.z) }
     let lo = points.reduce(SIMD2<Float>(repeating: .infinity)) { simd_min($0,$1) }
@@ -133,13 +139,13 @@ private struct DoorwayMap: View {
           }
         }
         ForEach(Array(doors.enumerated()), id: \.element.id) { i, door in
-          Button("\(i+1)") { selected = door.id }
+          Button(String(i + 1)) { selected = door.id }
             .font(.caption.bold()).frame(width: 28, height: 28)
             .background(selected == door.id ? Color.green : Color.blue, in: Circle()).foregroundStyle(.white)
             .position(project(SIMD2(door.transform.columns.3.x, door.transform.columns.3.z)))
             .buttonStyle(.plain)
         }
       }
-    }.frame(height: points.isEmpty ? 0 : 180).accessibilityLabel("Doorway plan for \(room.name)")
+    }.frame(height: points.isEmpty ? 0 : 180).accessibilityLabel(Lf("Doorway plan for %@", room.name))
   }
 }

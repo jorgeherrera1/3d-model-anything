@@ -28,7 +28,10 @@ struct HouseScreen: View {
   @State private var error: String?
   @State private var deletingSession: HouseProject.Session?
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     Group {
       if let house {
         list(house)
@@ -107,7 +110,7 @@ struct HouseScreen: View {
       LazyVStack(alignment: .leading, spacing: 0) {
         VStack(alignment: .leading, spacing: 8) {
           Text(house.name).font(.largeTitle.weight(.bold)).tracking(-1)
-          Text("\(house.rooms.count) room\(house.rooms.count == 1 ? "" : "s")")
+          Text(Lp(house.rooms.count, "%lld room", "%lld rooms"))
             .font(.title3).foregroundStyle(Fieldwork.secondary)
         }.padding(.top, 12).padding(.bottom, 28)
         FieldworkRule()
@@ -140,7 +143,7 @@ struct HouseScreen: View {
               }
             }.padding(.top, 18)
           } label: {
-            Label("Sessions · \(house.sessions.count)", systemImage: "square.stack.3d.up")
+            Label(Lf("Sessions · %lld", Int64(house.sessions.count)), systemImage: "square.stack.3d.up")
               .font(.subheadline).foregroundStyle(Fieldwork.secondary)
           }.padding(.vertical, 24)
         }
@@ -198,10 +201,10 @@ struct HouseScreen: View {
       FieldworkEyebrow(text: String(format: "%02d", number))
       Text(room.name).font(.headline).foregroundStyle(Fieldwork.ink)
       if let active = room.active {
-        Text(active.capturedAt.formatted(.dateTime.month(.abbreviated).day().year()))
+        Text(AppLanguage.current.scanDate(active.capturedAt))
           .font(.system(.caption, design: .monospaced)).foregroundStyle(Fieldwork.secondary)
         if let detail = record(active)?.photographedPercent {
-          Text("\(detail)% photo detail").font(.caption).foregroundStyle(Fieldwork.secondary)
+          Text(Lf("%lld%% photo detail", Int64(detail))).font(.caption).foregroundStyle(Fieldwork.secondary)
         }
       }
     }
@@ -210,12 +213,12 @@ struct HouseScreen: View {
   private func sessionRow(_ house: HouseProject, _ s: HouseProject.Session) -> some View {
     VStack(alignment: .leading, spacing: 6) {
       HStack {
-        Text(s.startedAt.formatted(date: .abbreviated, time: .shortened)).font(.body)
+        Text(AppLanguage.current.scanDate(s.startedAt, time: true)).font(.body)
         Spacer()
         AlignmentBadge(alignment: s.alignment)
       }
-      let names = s.rooms.compactMap { i in manifests[s.id]?.rooms.first { $0.index == i }?.name ?? "Room \(i + 1)" }
-      Text("\(names.isEmpty ? "no rooms" : names.joined(separator: ", "))\(s.endedAt == nil ? " · incomplete" : "")")
+      let names = s.rooms.compactMap { i in manifests[s.id]?.rooms.first { $0.index == i }?.name ?? Lf("Room %lld", Int64(i + 1)) }
+      Text((names.isEmpty ? L("no rooms") : names.joined(separator: ", ")) + (s.endedAt == nil ? L(" · incomplete") : ""))
         .font(.footnote)
         .foregroundStyle(s.endedAt == nil ? .orange : .secondary)
       HStack {
@@ -257,7 +260,7 @@ struct HouseScreen: View {
   private func reload() {
     guard let h = try? HouseProject.load(id: houseID) else {
       if FileManager.default.fileExists(atPath: HouseProject.url(forHouse: houseID).path) {
-        error = "Couldn't read house.json."
+        error = L("Couldn't read house.json.")
       } else {
         onGone()
       }
@@ -283,7 +286,7 @@ struct HouseScreen: View {
   }
 
   private func share(_ folder: URL, name: String) {
-    busy = "Zipping…"
+    busy = L("Zipping…")
     Task.detached {
       let result = Result { try FolderZipper.zip(folder, name: name) }
       await MainActor.run {

@@ -4,25 +4,38 @@ import UniformTypeIdentifiers
 
 @main
 struct HouseCaptureApp: App {
+  @State private var languageChoice: LanguageChoice
+
+  init() {
+    AppLanguage.activate()
+    _languageChoice = State(initialValue: LanguageChoice())
+  }
+
   var body: some Scene {
     WindowGroup {
-      #if DEBUG
-      let args = ProcessInfo.processInfo.arguments
-      if let preview = PreviewDebug.launchView() {
-        preview // -preview-house <folder> (see PreviewDebug.swift)
-      } else if args.contains("-diag") {
-        DiagnosticsView()
-      } else if args.contains("-selftest") {
-        SelfTestView()
-      } else if args.contains("-autotest") || args.contains("-autotest-continue") {
-        AutoTestView(continueLatest: args.contains("-autotest-continue"))
-      } else {
-        HomeView()
-      }
-      #else
-      HomeView()
-      #endif
+      root
+        .environment(languageChoice)
+        .environment(\.locale, languageChoice.language.locale)
     }
+  }
+
+  @ViewBuilder private var root: some View {
+    #if DEBUG
+    let args = ProcessInfo.processInfo.arguments
+    if let preview = PreviewDebug.launchView() {
+      preview
+    } else if args.contains("-diag") {
+      DiagnosticsView()
+    } else if args.contains("-selftest") {
+      SelfTestView()
+    } else if args.contains("-autotest") || args.contains("-autotest-continue") {
+      AutoTestView(continueLatest: args.contains("-autotest-continue"))
+    } else {
+      HomeView()
+    }
+    #else
+    HomeView()
+    #endif
   }
 }
 
@@ -41,12 +54,15 @@ struct HomeView: View {
   @State private var generation = 0
   @State private var openedFromArgs = false
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     NavigationStack(path: $path) {
       ScrollView {
         LazyVStack(alignment: .leading, spacing: 0) {
           VStack(alignment: .leading, spacing: 14) {
-            FieldworkEyebrow(text: "A record of your spaces")
+            FieldworkEyebrow(text: L("A record of your spaces"))
             Text("3D Model Anything").font(.largeTitle.weight(.bold)).tracking(-1)
             Text("Room by room. Every detail.").font(.title3).foregroundStyle(Fieldwork.secondary)
           }.padding(.top, 20).padding(.bottom, 36)
@@ -63,7 +79,7 @@ struct HomeView: View {
             NavigationLink(value: house.id) {
               VStack(alignment: .leading, spacing: 14) {
                 HStack {
-                  FieldworkEyebrow(text: String(format: "%02d / HOUSE", number + 1))
+                  FieldworkEyebrow(text: String(format: L("%02d / HOUSE"), number + 1))
                   Spacer()
                   Image(systemName: "arrow.up.right").foregroundStyle(Fieldwork.orange)
                 }
@@ -105,9 +121,9 @@ struct HomeView: View {
       .navigationTitle("").navigationBarTitleDisplayMode(.inline)
       .safeAreaInset(edge: .bottom) {
         Button {
-          newName = houses.isEmpty ? "Our house" : ""
+          newName = houses.isEmpty ? L("Our house") : ""
           naming = true
-        } label: { Label("New house", systemImage: "plus") }
+        } label: { Label(L("New house"), systemImage: "plus") }
           .buttonStyle(FieldworkButtonStyle()).disabled(!CaptureController.isSupported)
           .padding(.horizontal, 24).padding(.top, 12).padding(.bottom, 10).background(Fieldwork.paper)
       }
@@ -132,7 +148,7 @@ struct HomeView: View {
       } message: {
         Text("Then scan your first room. You can add more rooms later.")
       }
-      .confirmationDialog("Delete \(deleting?.name ?? "house")?", isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }), titleVisibility: .visible) {
+      .confirmationDialog(Lf("Delete %@?", deleting?.name ?? L("house")), isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }), titleVisibility: .visible) {
         Button("Delete house and all its scans", role: .destructive) {
           if let h = deleting {
             do { try h.delete() } catch { self.error = error.localizedDescription }
@@ -176,8 +192,8 @@ struct HomeView: View {
       defer { working = false }
       do {
         try await CaptureReadiness.prepare()
-        var house = try HouseProject.create(name: name.isEmpty ? "House" : name)
-        let zone = house.addZone(named: "Area 1")
+        var house = try HouseProject.create(name: name.isEmpty ? L("House") : name)
+        let zone = house.addZone(named: Lf("Area %lld", Int64(1)))
         try house.save()
         reload()
         path = [house.id]
@@ -222,7 +238,10 @@ struct HomeView: View {
 
 private struct HouseRow: View {
   let house: HouseProject
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(alignment: .leading, spacing: 4) {
       Text(house.name).font(.title2.bold()).foregroundStyle(Fieldwork.ink)
       Text(summary).font(.footnote).foregroundStyle(.secondary)
@@ -231,9 +250,11 @@ private struct HouseRow: View {
 
   private var summary: String {
     let rooms = house.rooms.count, sessions = house.sessions.count
-    var s = "\(rooms) room\(rooms == 1 ? "" : "s") · \(sessions) session\(sessions == 1 ? "" : "s")"
-    if house.zones.count > 1 { s += " · \(house.zones.count) areas" }
-    if let last = house.sessions.map(\.startedAt).max() { s += " · last \(last.formatted(date: .abbreviated, time: .shortened))" }
+    var s = "\(Lp(rooms, "%lld room", "%lld rooms")) · \(Lp(sessions, "%lld session", "%lld sessions"))"
+    if house.zones.count > 1 { s += " · \(Lp(house.zones.count, "%lld area", "%lld areas"))" }
+    if let last = house.sessions.map(\.startedAt).max() {
+      s += " · \(Lf("last %@", AppLanguage.current.scanDate(last, time: true)))"
+    }
     return s
   }
 }

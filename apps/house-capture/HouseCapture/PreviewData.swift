@@ -21,10 +21,9 @@ struct PreviewSession: Identifiable {
 
   var title: String {
     guard let startedAt else { return id }
-    return startedAt.formatted(.dateTime.month(.abbreviated).day().hour().minute())
+    return AppLanguage.current.scanDate(startedAt, time: true)
   }
 
-  /// Polycam-style: the first session green, later ones pink, then blue, orange, purple, teal
   var hue: UIColor { PreviewSession.hues[index % PreviewSession.hues.count] }
 
   static let hues: [UIColor] = [
@@ -97,11 +96,10 @@ struct PreviewSource {
       }
     }
     rooms.sort { ($0.session, $0.index) < ($1.session, $1.index) }
-    // Keep aligned earlier sessions available as photo sources for the active room meshes.
     let hidden = Set(sessions.filter { !$0.aligned && $0.index != sessions.first?.index }.map(\.index))
     let n = rooms.count
     return PreviewSource(title: house.name,
-                         subtitle: "\(n) room\(n == 1 ? "" : "s") · \(sessions.count) session\(sessions.count == 1 ? "" : "s")",
+                         subtitle: "\(Lp(n, "%lld room", "%lld rooms")) · \(Lp(sessions.count, "%lld session", "%lld sessions"))",
                          sessions: sessions, rooms: rooms, hiddenSessions: hidden)
   }
 
@@ -114,7 +112,7 @@ struct PreviewSource {
     let deleted = house.deletedRooms.flatMap { $0.room.history }.filter { $0.session == session.id }
     let rooms = roomsInBundle(s).filter { room in !deleted.contains { $0.index == room.index } }
     return PreviewSource(title: s.title,
-                         subtitle: "\(rooms.count) room\(rooms.count == 1 ? "" : "s") · \(s.alignment)",
+                         subtitle: "\(Lp(rooms.count, "%lld room", "%lld rooms")) · \(s.alignment)",
                          sessions: [s], rooms: rooms)
   }
 
@@ -134,7 +132,7 @@ struct PreviewSource {
     return files.compactMap { f -> Int? in
       guard f.hasPrefix("room-"), f.hasSuffix(".ply") else { return nil }
       return Int(f.dropFirst(5).dropLast(4))
-    }.sorted().map { roomEntry(s, index: $0, name: "Room \($0 + 1)") }
+    }.sorted().map { roomEntry(s, index: $0, name: Lf("Room %lld", Int64($0 + 1))) }
   }
 
   // MARK: photos

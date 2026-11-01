@@ -59,14 +59,13 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       case failed(String)
     }
     var stage: Stage = .loadingMap
-    var tracking = "Starting the camera…"
+    var tracking = L("Starting the camera…")
     var seconds = 0
     /// verification progress 0…1 (≥ 1.5 s of good matches)
     var progress: Float = 0
     var check: ZoneReference.Check?
     var timedOut = false
-    /// "Loading earlier scan…", "earlier scan: 85k triangles", …
-    var reference = "Loading your earlier scan…"
+    var reference = L("Loading your earlier scan…")
   }
 
   @Published private(set) var phase: Phase
@@ -127,7 +126,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       guard let self, !self.closed else { return }
       self.sessionNeedsRestart = true
       self.candidate = nil
-      self.lastWarning = "Position tracking stopped. Finish this room to save what is available, then finish the session and start a new capture."
+      self.lastWarning = L("Position tracking stopped. Finish this room to save what is available, then finish the session and start a new capture.")
       self.diagnostics.recordFailure(source: "ARKit", chain: chain, since: self.startedAt)
       self.sampleDiagnostics(force: true)
     }
@@ -253,7 +252,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     } else {
       zone = house.addZone(named: "")
     }
-    guard let zone else { throw CocoaError(.fileReadNoSuchFile, userInfo: [NSLocalizedDescriptionKey: "That room is no longer available. Start a new scan."]) }
+    guard let zone else { throw CocoaError(.fileReadNoSuchFile, userInfo: [NSLocalizedDescriptionKey: L("That room is no longer available. Start a new scan.")]) }
 
     var id = HouseProject.folderName(for: Date())
     var n = 2
@@ -287,9 +286,12 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     return CaptureController(house: house, plan: plan, bundle: bundle, alignment: alignment)
   }
 
-  private var roomIndex: Int { rooms.count } // the room being scanned
+  private var roomIndex: Int { rooms.count }
 
-  var zoneName: String { house.roomsInZone(plan.zoneID).map(\.name).joined(separator: ", ").isEmpty ? "your earlier scan" : house.roomsInZone(plan.zoneID).map(\.name).joined(separator: ", ") }
+  var zoneName: String {
+    let names = house.roomsInZone(plan.zoneID).map(\.name).joined(separator: ", ")
+    return names.isEmpty ? L("your earlier scan") : names
+  }
   var isContinue: Bool { plan.worldMap != nil }
   var hasGhost: Bool { reference?.ghost != nil }
 
@@ -340,7 +342,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       diagnostics.log("world map loaded: \(map.rawFeaturePoints.points.count) feature points, \(map.anchors.count) anchors", since: startedAt)
       runRelocalization(map)
     case .failure(let error):
-      reloc.stage = .failed("Couldn't read the saved map (\(error.localizedDescription)).")
+      reloc.stage = .failed(Lf("Couldn't read the saved map (%@).", error.localizedDescription))
       diagnostics.log("world map load failed: \(error.localizedDescription)", since: startedAt)
     }
   }
@@ -356,9 +358,10 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     referenceLoaded = true
     scanView.setGhost(ref.ghost)
     applyGhostOpacity()
+    let triangles = Int64((ref.ghost?.triangleCount ?? 0) / 1000)
     reloc.reference = ref.isEmpty
-      ? "No saved mesh in \(zoneName) to check against."
-      : "Earlier scan: \(ref.files.count) mesh\(ref.files.count == 1 ? "" : "es"), \((ref.ghost?.triangleCount ?? 0) / 1000)k triangles"
+      ? Lf("No saved mesh in %@ to check against.", zoneName)
+      : Lf("Earlier scan: %@, %lldk triangles", Lp(ref.files.count, "%lld mesh", "%lld meshes"), triangles)
   }
 
   private static func relocalizationConfiguration(map: ARWorldMap?) -> ARWorldTrackingConfiguration {
@@ -528,11 +531,10 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     if captureReady { scanView.refeedEngine(from: arSession) }
     loadPriorPhotos()
     UINotificationFeedbackGenerator().notificationOccurred(.success)
-    show(notice: residual.map { "Lined up with your earlier scan (±\(String(format: "%.1f", $0 * 100)) cm). Pick up where you left off." }
-      ?? "Relocalized in \(zoneName). Pick up where you left off.")
+    show(notice: residual.map { Lf("Lined up with your earlier scan (±%.1f cm). Pick up where you left off.", $0 * 100) }
+      ?? Lf("Relocalized in %@. Pick up where you left off.", zoneName))
   }
 
-  /// Give up on the saved map: this session gets its own frame (the Mac lines it up later)
   func startUnaligned() {
     guard phase == .relocalizing else { return }
     let why: String
@@ -554,7 +556,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     scanView.feed.isOn = true
     reloc.stage = .done
     phase = .betweenRooms
-    show(notice: "Saved rooms will need alignment. Use Connect room to match a doorway with another room.")
+    show(notice: L("Saved rooms will need alignment. Use Connect room to match a doorway with another room."))
   }
 
   /// Relocalized to the wrong place (or stuck): run the map again from scratch
@@ -597,7 +599,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     if monitorBad >= 3, !warnedDrift {
       warnedDrift = true
       diagnostics.log("alignment drift: known \(check.known) matched \(check.matched)", since: startedAt)
-      lastWarning = "The earlier scan doesn't line up any more (tracking may have reset). Finish this session and use Continue again so new rooms land in the right place."
+      lastWarning = L("The earlier scan doesn't line up any more (tracking may have reset). Finish this session and use Continue again so new rooms land in the right place.")
     }
   }
 
@@ -621,7 +623,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     do {
       house = try HouseProject.modify(house.id) { $0.setAlignment(session: plan.sessionID, alignment) }
     } catch {
-      lastWarning = "Couldn't update house.json: \(error.localizedDescription)"
+      lastWarning = Lf("Couldn't update house.json: %@", error.localizedDescription)
     }
   }
 
@@ -764,7 +766,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       phase = .finishingRoom
     }
     if let error {
-      lastWarning = "Scanning stopped: \(error.localizedDescription). Saving what is available. Finish this session before starting a new capture."
+      lastWarning = Lf("Scanning stopped: %@. Saving what is available. Finish this session before starting a new capture.", error.localizedDescription)
       diagnostics.log("RoomPlan ended with error: \(error.localizedDescription)", since: startedAt)
       diagnostics.recordFailure(source: "RoomPlan", chain: Diagnostics.errorChain(error), since: startedAt)
       sampleDiagnostics(force: true)
@@ -796,7 +798,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       engine.setRoom(room)
       scanView.showRoom(room)
     } catch {
-      lastWarning = "RoomPlan couldn't build the layout (\(error.localizedDescription)). The mesh and photos are still saved."
+      lastWarning = Lf("RoomPlan couldn't build the layout (%@). The mesh and photos are still saved.", error.localizedDescription)
       record.file = "" // no layout for this room; capturedRooms only holds rooms RoomPlan built
       record.usdz = ""
     }
@@ -819,7 +821,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       try bundle.savePhotos(photos)
     } catch {
       recordingSaveFailed = true
-      lastWarning = "Some recording files could not be saved: \(error.localizedDescription). Free storage and finish the session to retry."
+      lastWarning = Lf("Some recording files could not be saved: %@. Free storage and finish the session to retry.", error.localizedDescription)
     }
     do {
       house = try HouseProject.modify(house.id) {
@@ -827,15 +829,14 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       }
     } catch {
       recordingSaveFailed = true
-      lastWarning = "Couldn't add \(record.name) to house.json: \(error.localizedDescription)"
+      lastWarning = Lf("Couldn't add %@ to house.json: %@", record.name, error.localizedDescription)
     }
     diagnostics.log("room \(index) '\(record.name)' saved: \(record.walls) walls, mesh \(record.mesh?.vertices ?? 0) v", since: startedAt)
     do { try writeManifest() }
     catch {
       recordingSaveFailed = true
-      lastWarning = "The scan index could not be saved: \(error.localizedDescription). Free storage and finish the session to retry."
+      lastWarning = Lf("The scan index could not be saved: %@. Free storage and finish the session to retry.", error.localizedDescription)
     }
-    // keep the zone's map current, so a crash later doesn't cost the whole session's alignment
     await saveWorldMap(final: false)
     roomName = ""
     selectedRoomID = nil
@@ -863,7 +864,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     do {
       house = try HouseProject.modify(house.id) { $0.removeRoomScan(session: plan.sessionID, index: last.index) }
     } catch {
-      lastWarning = "Couldn't update house.json: \(error.localizedDescription)"
+      lastWarning = Lf("Couldn't update house.json: %@", error.localizedDescription)
     }
     try? bundle.savePhotos(photos)
     try? depthRecorder.save()
@@ -880,7 +881,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     guard phase == .betweenRooms || retrying else { return }
     phase = .finishing
     applyGhostOpacity()
-    finishingStep = "Saving the map: keep the camera moving slowly…"
+    finishingStep = L("Saving the map: keep the camera moving slowly…")
     if !retrying { await saveWorldMap(final: true) }
     stopTicking()
     arSession.pause()
@@ -888,7 +889,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     UIApplication.shared.isIdleTimerDisabled = false
     endedAt = Date()
 
-    finishingStep = "Saving…"
+    finishingStep = L("Saving…")
     do {
       try bundle.savePhotos(photos)
       try depthRecorder.save()
@@ -906,7 +907,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     }
 
     // RoomPlan merges last: it's slow, and everything above is already safe on disk
-    finishingStep = "Merging rooms…"
+    finishingStep = L("Merging rooms…")
     var structureFile: String?
     var structureError: String?
     if !capturedRooms.isEmpty {
@@ -978,9 +979,9 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     }
     let status = arSession.currentFrame?.worldMappingStatus ?? .notAvailable
     guard status == .mapped || status == .extending else {
-      if !worldMapSaved { // an earlier save of this session still stands otherwise
+      if !worldMapSaved {
         worldMapStatus = "not saved: mapping status \(WorldMapFile.describe(status))"
-        mapSummary = "Map not saved yet (ARKit: \(WorldMapFile.describe(status)))"
+        mapSummary = Lf("Map not saved yet (ARKit: %@)", WorldMapFile.describe(status))
       }
       diagnostics.log("world map \(final ? "final " : "")skipped: \(WorldMapFile.describe(status))", since: startedAt)
       return
@@ -1006,22 +1007,22 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       worldMapSaved = true
       worldMapStatus = status == .mapped ? "mapped" : "extending (saved before ARKit finished mapping: may relocalize less reliably)"
       let mb = Double(bytes) / 1_000_000
-      mapSummary = String(format: "Map saved (%.0f MB%@)", mb, status == .mapped ? "" : ", still extending")
+      mapSummary = Lf("Map saved (%.0f MB%@)", mb, status == .mapped ? "" : L(", still extending"))
       diagnostics.log(String(format: "world map saved: %@ %.1f MB features %d%@", WorldMapFile.describe(status), mb, map.rawFeaturePoints.points.count, zoneFrame ? " (zone map)" : ""), since: startedAt)
       if zoneFrame {
         do {
           house = try HouseProject.modify(house.id) { $0.setWorldMap(zone: plan.zoneID, path: zonePath) }
         } catch {
-          lastWarning = "Couldn't update house.json: \(error.localizedDescription)"
+          lastWarning = Lf("Couldn't update house.json: %@", error.localizedDescription)
         }
       }
       if mb > 40, !warnedBigMap {
         warnedBigMap = true
-        lastWarning = "Finish and save this scan before scanning another room. The next scan will start fresh to keep capture responsive."
+        lastWarning = L("Finish and save this scan before scanning another room. The next scan will start fresh to keep capture responsive.")
       }
     case .failure(let e):
       diagnostics.log("world map write failed: \(e.localizedDescription)", since: startedAt)
-      lastWarning = "Couldn't save the world map: \(e.localizedDescription)"
+      lastWarning = Lf("Couldn't save the world map: %@", e.localizedDescription)
     }
   }
 
@@ -1136,7 +1137,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     lastDiagnosticSample = now
     if phase == .scanning, !paused, let available = CaptureReadiness.available(at: bundle.url), available < CaptureReadiness.pauseReserve {
       pause()
-      lastWarning = "Storage is almost full. Recording is paused. Finish this room to save what is available, then free space before continuing."
+      lastWarning = L("Storage is almost full. Recording is paused. Finish this room to save what is available, then free space before continuing.")
     }
     let frame = arSession.currentFrame
     let meshes = frame?.anchors.compactMap { $0 as? ARMeshAnchor } ?? []
@@ -1184,13 +1185,13 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
 
   nonisolated static func trackingText(_ state: ARCamera.TrackingState) -> String {
     switch state {
-    case .normal: "Tracking"
-    case .notAvailable: "Camera starting…"
-    case .limited(.initializing): "Getting started: move the phone slowly"
-    case .limited(.relocalizing): "Looking for a place it knows…"
-    case .limited(.excessiveMotion): "Slow down"
-    case .limited(.insufficientFeatures): "Not enough detail here: aim at furniture, doorways, corners"
-    case .limited: "Tracking limited"
+    case .normal: L("Tracking")
+    case .notAvailable: L("Camera starting…")
+    case .limited(.initializing): L("Getting started: move the phone slowly")
+    case .limited(.relocalizing): L("Looking for a place it knows…")
+    case .limited(.excessiveMotion): L("Slow down")
+    case .limited(.insufficientFeatures): L("Not enough detail here: aim at furniture, doorways, corners")
+    case .limited: L("Tracking limited")
     }
   }
 
@@ -1262,7 +1263,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       previousPose = nil
       poseHistory.removeAll()
       if !paused { scanView.refeedEngine(from: arSession) }
-      show(notice: paused ? "Tracking recovered. Tap Resume when ready." : "Tracking recovered. Continue slowly.")
+      show(notice: paused ? L("Tracking recovered. Tap Resume when ready.") : L("Tracking recovered. Continue slowly."))
     }
   }
 
@@ -1528,7 +1529,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
           self.roomPhotoCount += 1
           self.refreshCoverage()
         } else {
-          self.lastWarning = "A photo could not be saved. Check available storage before continuing."
+          self.lastWarning = L("A photo could not be saved. Check available storage before continuing.")
           self.diagnostics.log("JPEG write failed: \(record.file)", since: self.startedAt)
         }
       }
@@ -1598,11 +1599,11 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
 
   nonisolated private static func describe(_ i: RoomCaptureSession.Instruction) -> String? {
     switch i {
-    case .moveCloseToWall: "Move closer to the wall"
-    case .moveAwayFromWall: "Move back from the wall"
-    case .slowDown: "Slow down"
-    case .turnOnLight: "Turn on more lights"
-    case .lowTexture: "Aim at something with more detail"
+    case .moveCloseToWall: L("Move closer to the wall")
+    case .moveAwayFromWall: L("Move back from the wall")
+    case .slowDown: L("Slow down")
+    case .turnOnLight: L("Turn on more lights")
+    case .lowTexture: L("Aim at something with more detail")
     case .normal: nil
     @unknown default: nil
     }

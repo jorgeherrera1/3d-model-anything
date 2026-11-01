@@ -8,17 +8,20 @@ import UIKit
 struct WalkthroughPanel: View {
   @ObservedObject var model: PreviewModel
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(spacing: 12) {
       HStack(spacing: 12) {
         roundButton("chevron.left") { model.previous() }
           .disabled((model.current ?? 0) <= 0)
         VStack(spacing: 2) {
           if let c = model.current, model.photos.indices.contains(c) {
-            Text("Photo \(c + 1) of \(model.photos.count)").font(.subheadline.weight(.semibold)).monospacedDigit()
+            Text(Lf("Photo %lld of %lld", Int64(c + 1), Int64(model.photos.count))).font(.subheadline.weight(.semibold)).monospacedDigit()
             Text(detail(model.photos[c])).font(.caption).foregroundStyle(.secondary).lineLimit(1)
           } else {
-            Text("\(model.photos.count) photos").font(.subheadline.weight(.semibold))
+            Text(Lp(model.photos.count, "%lld photo", "%lld photos")).font(.subheadline.weight(.semibold))
             Text("Tap a camera to jump to it").font(.caption).foregroundStyle(.secondary)
           }
         }
@@ -57,7 +60,7 @@ struct WalkthroughPanel: View {
     var parts: [String] = []
     if let room = model.rooms.first(where: { $0.session == p.session && $0.index == p.room }) { parts.append(room.name) }
     if model.sessions.count > 1, let s = model.sessions.first(where: { $0.index == p.session }) { parts.append(s.title) }
-    parts.append(String(format: "%.1f m from start", simd_distance(p.position, model.photos.first?.position ?? p.position)))
+    parts.append(Lf("%.1f m from start", simd_distance(p.position, model.photos.first?.position ?? p.position)))
     return parts.joined(separator: " · ")
   }
 }
@@ -65,7 +68,10 @@ struct WalkthroughPanel: View {
 private struct Filmstrip: View {
   @ObservedObject var model: PreviewModel
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     ScrollViewReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
         LazyHStack(spacing: 6) {
@@ -94,7 +100,10 @@ private struct Thumb: View {
   let selected: Bool
   @State private var image: UIImage?
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     ZStack {
       if let image {
         Image(uiImage: image).resizable().scaledToFill()

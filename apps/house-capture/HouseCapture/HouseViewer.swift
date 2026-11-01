@@ -39,7 +39,7 @@ final class PreviewModel: ObservableObject {
 
   enum Phase: Equatable { case loading, ready, empty(String) }
   @Published var phase: Phase = .loading
-  @Published var loadStage = "Opening scan…"
+  @Published var loadStage = L("Opening scan…")
   @Published var loadFraction: Double = 0
 
   @Published private(set) var style: RenderStyle = .photo
@@ -116,7 +116,7 @@ final class PreviewModel: ObservableObject {
     var failures: [String] = []
     for (i, room) in rooms.enumerated() {
       guard FileManager.default.fileExists(atPath: room.mesh.path) else { continue }
-      loadStage = rooms.count > 1 ? "Loading \(room.name) (\(i + 1) of \(rooms.count))" : "Loading \(room.name)"
+      loadStage = rooms.count > 1 ? Lf("Loading %@ (%lld of %lld)", room.name, Int64(i + 1), Int64(rooms.count)) : Lf("Loading %@", room.name)
       let toHouse = sessions.first { $0.index == room.session }?.toHouse ?? matrix_identity_float4x4
       let base = Double(i) / Double(rooms.count), span = 1 / Double(rooms.count)
       let result = await Task.detached(priority: .userInitiated) { () -> Result<MeshAsset, Error> in
@@ -139,7 +139,7 @@ final class PreviewModel: ObservableObject {
       loadFraction = base + span
     }
     if loaded.count > 1 {
-      loadStage = "Merging rooms"
+      loadStage = L("Merging rooms")
       await Task.detached(priority: .userInitiated) { Self.trimSurroundings(loaded) }.value
     }
     assets = loaded
@@ -181,7 +181,7 @@ final class PreviewModel: ObservableObject {
         scene.resetView(animated: false)
         phase = .ready
       } else {
-        phase = .empty(failures.first ?? "This scan has no LiDAR mesh or RoomPlan model yet.")
+        phase = .empty(failures.first ?? L("This scan has no LiDAR mesh or RoomPlan model yet."))
       }
     } else if scene.hasRoomPlan {
       styles.append(.roomPlan)
@@ -249,9 +249,8 @@ final class PreviewModel: ObservableObject {
         let sessionPhotos = photos.filter {
           $0.session == asset.room.session || (isAligned && alignedSessions.contains($0.session))
         }
-        bakeLabel = todo.count > 1 ? "Coloring \(asset.room.name)" : "Coloring from photos"
+        bakeLabel = todo.count > 1 ? Lf("Coloring %@", asset.room.name) : L("Coloring from photos")
         let base = Double(k) / Double(todo.count), span = 1 / Double(todo.count)
-        // Retain the small vertex-color cache as a quick fallback for occluded/unseen faces.
         if asset.photoColors == nil {
           let colors = await Task.detached(priority: .utility) {
             VertexColorBaker.bake(mesh: asset.mesh, photos: sessionPhotos, progress: { _, _ in }, isCancelled: { flag.isCancelled })
@@ -265,7 +264,7 @@ final class PreviewModel: ObservableObject {
           }
         }
         let pixelBudget = 48_000_000 / max(1, assets.count)
-        bakeLabel = "Adding photo detail to \(asset.room.name)"
+        bakeLabel = Lf("Adding photo detail to %@", asset.room.name)
         let mesh = asset.mesh, inside = asset.inside, outside = asset.outside
         let result = await Task.detached(priority: .utility) {
           PhotoTextures.build(mesh: mesh, inside: inside, outside: outside, photos: sessionPhotos,
@@ -510,10 +509,13 @@ final class PreviewModel: ObservableObject {
     if scaleBar?.label != label || abs((scaleBar?.width ?? 0) - width) > 0.5 { scaleBar = (width, label) }
   }
 
-  private func updateStats() {
+  func updateStats() {
     let v = scene.totalVertices, t = scene.totalTriangles
-    func k(_ n: Int) -> String { n >= 1_000_000 ? String(format: "%.2fM", Double(n) / 1e6) : "\(n / 1000)k" }
-    stats = "\(k(v)) vertices · \(k(t)) triangles · loaded in \(String(format: "%.2f", loadSeconds)) s" + (fps.map { String(format: " · %.0f fps", $0) } ?? "")
+    func k(_ n: Int) -> String { n >= 1_000_000 ? String(format: "%.2fM", locale: AppLanguage.current.locale, Double(n) / 1e6) : "\(n / 1000)k" }
+    let seconds = String(format: "%.2f", locale: AppLanguage.current.locale, loadSeconds)
+    var line = Lf("%@ vertices · %@ triangles · loaded in %@ s", k(v), k(t), seconds)
+    if let fps { line += Lf(" · %.0f fps", fps) }
+    stats = line
   }
 
   func measureFPS() {
@@ -544,6 +546,8 @@ struct PreviewScreen: View {
   @Environment(\.dismiss) private var dismiss
   @Namespace private var styleNS
 
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
     ZStack {
       PreviewSceneView(scene: model.scene)
@@ -570,6 +574,9 @@ struct PreviewScreen: View {
     .environment(\.colorScheme, .dark)
     .onAppear { model.start() }
     .onDisappear { model.cancelBake() }
+    .onChange(of: languageChoice.language) { _, _ in
+      if !model.stats.isEmpty { model.updateStats() }
+    }
   }
 
   @ViewBuilder private var overlays: some View {
@@ -638,7 +645,7 @@ struct PreviewScreen: View {
     let shown = model.rooms.filter { model.visibleRooms.contains($0.id) }
     if shown.count == model.rooms.count { return model.source.subtitle }
     if shown.count == 1 { return shown[0].name }
-    return "\(shown.count) of \(model.rooms.count) rooms"
+    return Lf("%lld of %@", Int64(shown.count), Lp(model.rooms.count, "%lld room", "%lld rooms"))
   }
 
   private var filterMenu: some View {
@@ -653,7 +660,7 @@ struct PreviewScreen: View {
               Text(room.name + (model.sessions.count > 1 ? " · \(sessionTitle(room.session))" : ""))
             }
           }
-          Menu("Show only…") {
+          Menu(L("Show only…")) {
             ForEach(model.rooms) { room in Button(room.name) { model.showOnly(room.id) } }
           }
         }
@@ -662,7 +669,7 @@ struct PreviewScreen: View {
         Section("Sessions") {
           ForEach(model.sessions) { s in
             Toggle(isOn: Binding(get: { model.isSessionVisible(s.index) }, set: { model.setSessionVisible(s.index, $0) })) {
-              Text(s.title + (s.aligned ? "" : " (not aligned)"))
+              Text(s.title + (s.aligned ? "" : L(" (not aligned)")))
             }
           }
         }
@@ -701,7 +708,7 @@ struct PreviewScreen: View {
         .transition(.move(edge: .top).combined(with: .opacity))
       } else if let note = model.bakeNote, model.style == .photo || model.style == .sessions {
         Button { model.bakeMissing() } label: {
-          Label(note == "Coloring paused" ? "Coloring paused · Resume" : note, systemImage: "paintbrush")
+          Label(note == "Coloring paused" ? L("Coloring paused · Resume") : L(note), systemImage: "paintbrush")
             .font(.footnote.weight(.medium))
         }
         .foregroundStyle(.white)
@@ -763,8 +770,8 @@ struct PreviewScreen: View {
   @ViewBuilder private var legend: some View {
     switch model.style {
     case .coverage:
-      LegendView(items: [(Color(red: 1, green: 0.23, blue: 0.19), "Needs photos"), (Color(red: 1, green: 0.8, blue: 0), "Almost"),
-                         (Color(red: 0.2, green: 0.78, blue: 0.35), "Done"), (Color(white: 0.6), "Outside room")])
+      LegendView(items: [(Color(red: 1, green: 0.23, blue: 0.19), L("Needs photos")), (Color(red: 1, green: 0.8, blue: 0), L("Almost")),
+                         (Color(red: 0.2, green: 0.78, blue: 0.35), L("Done")), (Color(white: 0.6), L("Outside room"))])
     case .sessions:
       LegendView(items: model.sessions.filter { model.isSessionVisible($0.index) }.map { (Color(uiColor: $0.hue), $0.title) })
     default:
@@ -847,7 +854,10 @@ struct GlassIconButton: View {
 private struct LoadingCard: View {
   let stage: String
   let fraction: Double
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(spacing: 14) {
       ProgressRing(fraction: max(0.02, fraction)).frame(width: 44, height: 44)
       Text(stage).font(.subheadline.weight(.medium))
@@ -892,7 +902,10 @@ private struct LegendView: View {
 private struct ScaleBar: View {
   let width: CGFloat
   let label: String
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     VStack(alignment: .leading, spacing: 4) {
       Text(label).font(.caption2.weight(.semibold)).monospacedDigit()
       ZStack(alignment: .bottom) {
@@ -912,7 +925,10 @@ private struct ScaleBar: View {
 private struct CutSlider: View {
   @ObservedObject var model: PreviewModel
   private let height: CGFloat = 200
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     let range = model.cutRange
     let t = CGFloat((model.cutHeight - range.lowerBound) / (range.upperBound - range.lowerBound))
     VStack(spacing: 8) {
@@ -939,7 +955,10 @@ private struct CutSlider: View {
 
 private struct MeasureBanner: View {
   @ObservedObject var model: PreviewModel
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     HStack(spacing: 10) {
       Image(systemName: "ruler").foregroundStyle(PreviewTheme.accent)
       if let d = model.measureDistance {
@@ -947,7 +966,7 @@ private struct MeasureBanner: View {
         Button { model.clearMeasure() } label: { Image(systemName: "arrow.counterclockwise").font(.caption.weight(.bold)) }
           .foregroundStyle(.secondary)
       } else {
-        Text(model.measureA == nil ? "Tap a point on the scan" : "Tap a second point").font(.footnote.weight(.medium))
+        Text(model.measureA == nil ? L("Tap a point on the scan") : L("Tap a second point")).font(.footnote.weight(.medium))
       }
     }
     .padding(.horizontal, 14)
@@ -962,11 +981,23 @@ struct ScanVersionReview: View {
   let ref: HouseProject.RoomRef
   let session: HouseProject.Session
   @State private var showingActive = false
-  var body: some View {
-    let selected = showingActive ? (room.active ?? ref) : ref
+  @Environment(LanguageChoice.self) private var languageChoice
+
+  private func selectedRef(showingActive: Bool) -> HouseProject.RoomRef {
+    showingActive ? (room.active ?? ref) : ref
+  }
+
+  private func previewSource(showingActive: Bool) -> PreviewSource {
+    let selected = selectedRef(showingActive: showingActive)
     let selectedSession = house.session(selected.session) ?? session
     var source = PreviewSource.session(house, selectedSession)
-    let _ = source.rooms = source.rooms.filter { $0.index == selected.index }
+    source.rooms = source.rooms.filter { $0.index == selected.index }
+    return source
+  }
+
+  var body: some View {
+    let _ = languageChoice.language
+    let selected = selectedRef(showingActive: showingActive)
     VStack {
       if room.active != ref {
         Picker("Compare versions", selection: $showingActive) {
@@ -974,7 +1005,7 @@ struct ScanVersionReview: View {
           Text("Current scan").tag(true)
         }.pickerStyle(.segmented).padding()
       }
-      ScanReview(source: source).id("\(selected.session)-\(selected.index)")
+      ScanReview(source: previewSource(showingActive: showingActive)).id("\(selected.session)-\(selected.index)")
     }.navigationTitle(room.name)
   }
 }

@@ -55,7 +55,10 @@ struct FieldworkThumbnail: View {
   let index: Int
   @State private var image: UIImage?
   @State private var loaded = false
+  @Environment(LanguageChoice.self) private var languageChoice
+
   var body: some View {
+    let _ = languageChoice.language
     ZStack {
       if let image { Image(uiImage: image).resizable().scaledToFit() }
       else if loaded {

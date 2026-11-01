@@ -81,6 +81,7 @@ final class SelfTest {
   func run() async -> Bool {
     var houseID: String?
     do {
+      try languageChoice()
       try await coveragePerformance()
       trackingRecovery()
       try roomExperience()
@@ -101,6 +102,54 @@ final class SelfTest {
     }
     log(failed == 0 ? "PASS \(passed)/\(passed)" : "FAILED \(failed) of \(passed + failed)")
     return failed == 0
+  }
+
+  private func languageChoice() throws {
+    expect(AppLanguage.resolve(stored: nil) == .esMX && AppLanguage.resolve(stored: "") == .esMX && AppLanguage.resolve(stored: "es-MX") == .esMX && AppLanguage.resolve(stored: "es_MX") == .esMX, "missing language defaults to es-MX")
+    expect(AppLanguage.resolve(stored: "en-US") == .enUS && AppLanguage.resolve(stored: "en_US") == .enUS, "stored en-US resolves to en-US")
+    let unknownSuite = UserDefaults(suiteName: "housecapture.language.unknown")!
+    unknownSuite.removePersistentDomain(forName: "housecapture.language.unknown")
+    unknownSuite.set("fr", forKey: AppLanguage.storageKey)
+    let unknown = AppLanguage.boot(defaults: unknownSuite)
+    expect(unknown == .esMX && unknownSuite.string(forKey: AppLanguage.storageKey) == "es-MX" && (unknownSuite.array(forKey: "AppleLanguages") as? [String]) == ["es-MX"], "unknown language defaults to es-MX")
+    let stay = UserDefaults(suiteName: "housecapture.language.stay")!
+    stay.removePersistentDomain(forName: "housecapture.language.stay")
+    let first = AppLanguage.boot(defaults: stay)
+    let second = AppLanguage.boot(defaults: stay)
+    expect(first == .esMX && second == .esMX && stay.string(forKey: AppLanguage.storageKey) == "es-MX" && (stay.array(forKey: "AppleLanguages") as? [String]) == ["es-MX"], "boot twice stays es-MX")
+    let keep = UserDefaults(suiteName: "housecapture.language.keep")!
+    keep.removePersistentDomain(forName: "housecapture.language.keep")
+    keep.set("en-US", forKey: AppLanguage.storageKey)
+    let kept = AppLanguage.boot(defaults: keep)
+    expect(kept == .enUS && keep.string(forKey: AppLanguage.storageKey) == "en-US" && (keep.array(forKey: "AppleLanguages") as? [String]) == ["en-US"], "boot keeps stored en-US")
+    expect(AppLanguage.esMX.endonym == "Español (México)", "endonym es-MX")
+    expect(AppLanguage.enUS.endonym == "English (US)", "endonym en-US")
+    var parts = DateComponents()
+    parts.calendar = Calendar(identifier: .gregorian)
+    parts.timeZone = TimeZone(secondsFromGMT: 0)
+    parts.year = 2026
+    parts.month = 1
+    parts.day = 15
+    parts.hour = 12
+    let date = parts.date!
+    let zone = TimeZone(secondsFromGMT: 0)!
+    expect(AppLanguage.esMX.scanDate(date, timeZone: zone).lowercased().contains("ene"), "es-MX scan date uses ene")
+    expect(AppLanguage.enUS.scanDate(date, timeZone: zone).contains("Jan"), "en-US scan date uses Jan")
+    expect(AppLanguage.esMX.text("Room by room. Every detail.") == "Cuarto por cuarto. Cada detalle.", "es-MX home subtitle")
+    expect(AppLanguage.esMX.count(1, one: "%lld room", other: "%lld rooms") == "1 cuarto", "es-MX plural one cuarto")
+    expect(AppLanguage.esMX.count(2, one: "%lld room", other: "%lld rooms") == "2 cuartos", "es-MX plural many cuartos")
+    let previous = AppLanguage.current
+    AppLanguage.current = .esMX
+    let named = try HouseProject.create(name: "Our house")
+    defer {
+      try? FileManager.default.removeItem(at: named.url)
+      AppLanguage.current = previous
+    }
+    let idOK = named.id.range(of: #"^\d{4}-\d{2}-\d{2} \d{2}\.\d{2}\.\d{2}$"#, options: .regularExpression) != nil
+    expect(idOK, "house id stays numeric under es-MX")
+    AppLanguage.current = .enUS
+    let loaded = try HouseProject.load(id: named.id)
+    expect(loaded.name == "Our house", "A saved house literally named \"Our house\" keeps that name after a language change.")
   }
 
   private func coveragePerformance() async throws {

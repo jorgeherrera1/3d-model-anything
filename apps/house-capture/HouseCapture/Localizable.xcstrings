@@ -1,0 +1,5702 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    " (not aligned)": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (not aligned)"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (sin alinear)"
+          }
+        }
+      }
+    },
+    " (older scan)": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (older scan)"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " (escaneo anterior)"
+          }
+        }
+      }
+    },
+    " · %.0f fps": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · %.0f fps"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · %.0f fps"
+          }
+        }
+      }
+    },
+    " · incomplete": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · incomplete"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · incompleta"
+          }
+        }
+      }
+    },
+    " · no mesh": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · no mesh"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · sin malla"
+          }
+        }
+      }
+    },
+    " · off by %.1f cm": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · off by %.1f cm"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · desfase de %.1f cm"
+          }
+        }
+      }
+    },
+    "%.1f m from start": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.1f m from start"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.1f m desde el inicio"
+          }
+        }
+      }
+    },
+    "%02d / HOUSE": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%02d / HOUSE"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%02d / CASA"
+          }
+        }
+      }
+    },
+    "%@ isn't float": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ isn't float"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ no es float"
+          }
+        }
+      }
+    },
+    "%@ vertices · %@ triangles · loaded in %@ s": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vertices · %@ triangles · loaded in %@ s"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vértices · %@ triángulos · cargado en %@ s"
+          }
+        }
+      }
+    },
+    "%@: %@ · %@%@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ · %@%@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: %@ · %@%@"
+          }
+        }
+      }
+    },
+    "%lld area": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld area"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld área"
+          }
+        }
+      }
+    },
+    "%lld areas": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld areas"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld áreas"
+          }
+        }
+      }
+    },
+    "%lld mesh": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mesh"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld malla"
+          }
+        }
+      }
+    },
+    "%lld meshes": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld meshes"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld mallas"
+          }
+        }
+      }
+    },
+    "%lld of %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld of %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %@"
+          }
+        }
+      }
+    },
+    "%lld photo": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld photo"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld foto"
+          }
+        }
+      }
+    },
+    "%lld photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld fotos"
+          }
+        }
+      }
+    },
+    "%lld room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld cuarto"
+          }
+        }
+      }
+    },
+    "%lld rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld cuartos"
+          }
+        }
+      }
+    },
+    "%lld s": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld s"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld s"
+          }
+        }
+      }
+    },
+    "%lld saved scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld saved scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld escaneo guardado"
+          }
+        }
+      }
+    },
+    "%lld saved scans": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld saved scans"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld escaneos guardados"
+          }
+        }
+      }
+    },
+    "%lld session": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld session"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sesión"
+          }
+        }
+      }
+    },
+    "%lld sessions": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sessions"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sesiones"
+          }
+        }
+      }
+    },
+    "%lld wall measured": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld wall measured"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pared medida"
+          }
+        }
+      }
+    },
+    "%lld walls measured": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld walls measured"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld paredes medidas"
+          }
+        }
+      }
+    },
+    "%lld%%": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        }
+      }
+    },
+    "%lld%% of the walls you see match%@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%% of the walls you see match%@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%% de las paredes que ves coinciden%@"
+          }
+        }
+      }
+    },
+    "%lld%% photo detail": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%% photo detail"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%% de detalle de foto"
+          }
+        }
+      }
+    },
+    "%lldw %lldd %lldwin %lldobj": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldw %lldd %lldwin %lldobj"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldp %lldpu %lldv %lldobj"
+          }
+        }
+      }
+    },
+    ", still extending": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", still extending"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", todavía en extensión"
+          }
+        }
+      }
+    },
+    "3D": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3D"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3D"
+          }
+        }
+      }
+    },
+    "3D Model Anything": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3D Model Anything"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3D Model Anything"
+          }
+        }
+      }
+    },
+    "A doorway is missing. Capture a connecting hallway or doorway before joining these rooms.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A doorway is missing. Capture a connecting hallway or doorway before joining these rooms."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Falta una puerta. Captura un pasillo o una puerta de conexión antes de unir estos cuartos."
+          }
+        }
+      }
+    },
+    "A photo could not be saved. Check available storage before continuing.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A photo could not be saved. Check available storage before continuing."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar una foto. Revisa el almacenamiento disponible antes de continuar."
+          }
+        }
+      }
+    },
+    "A record of your spaces": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A record of your spaces"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un registro de tus espacios"
+          }
+        }
+      }
+    },
+    "About": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de"
+          }
+        }
+      }
+    },
+    "Active scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Active scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneo activo"
+          }
+        }
+      }
+    },
+    "Adding photo detail to %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adding photo detail to %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agregando detalle de foto a %@"
+          }
+        }
+      }
+    },
+    "Aim at something with more detail": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aim at something with more detail"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apunta a algo con más detalle"
+          }
+        }
+      }
+    },
+    "Aim at walls and furniture you scanned before (not just the floor).": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aim at walls and furniture you scanned before (not just the floor)."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apunta a paredes y muebles que ya escaneaste (no solo al piso)."
+          }
+        }
+      }
+    },
+    "Aim at well-lit furniture, shelves or a doorway. Blank walls are hard to track.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aim at well-lit furniture, shelves or a doorway. Blank walls are hard to track."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apunta a muebles, repisas o una puerta con buena luz. Las paredes lisas son difíciles de seguir."
+          }
+        }
+      }
+    },
+    "All rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los cuartos"
+          }
+        }
+      }
+    },
+    "Almost": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Almost"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Casi"
+          }
+        }
+      }
+    },
+    "Also moves with this room: %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also moves with this room: %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También se mueve con este cuarto: %@"
+          }
+        }
+      }
+    },
+    "Area %lld": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Area %lld"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Área %lld"
+          }
+        }
+      }
+    },
+    "Basement": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basement"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sótano"
+          }
+        }
+      }
+    },
+    "Bathroom": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baño"
+          }
+        }
+      }
+    },
+    "Bedroom": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedroom"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recámara"
+          }
+        }
+      }
+    },
+    "Camera access is off. Enable Camera for 3D Model Anything in Settings, then try scanning again.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera access is off. Enable Camera for 3D Model Anything in Settings, then try scanning again."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La cámara está desactivada. Activa la cámara para 3D Model Anything en Settings y vuelve a intentar el escaneo."
+          }
+        }
+      }
+    },
+    "Camera access is restricted on this device. Check Screen Time or device-management restrictions. You can still import and view scans.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera access is restricted on this device. Check Screen Time or device-management restrictions. You can still import and view scans."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El acceso a la cámara está restringido en este dispositivo. Revisa Screen Time o las restricciones de administración del dispositivo. Todavía puedes importar y ver escaneos."
+          }
+        }
+      }
+    },
+    "Camera access is unavailable. You can still import and view scans.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera access is unavailable. You can still import and view scans."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El acceso a la cámara no está disponible. Todavía puedes importar y ver escaneos."
+          }
+        }
+      }
+    },
+    "Camera interrupted. Return to the app, then aim at an area you already scanned.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera interrupted. Return to the app, then aim at an area you already scanned."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La cámara se interrumpió. Vuelve a la app y apunta a una zona que ya escaneaste."
+          }
+        }
+      }
+    },
+    "Camera starting…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera starting…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La cámara está iniciando…"
+          }
+        }
+      }
+    },
+    "Camera updates have stalled. Hold steady. If this persists, finish the room to save what you have.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera updates have stalled. Hold steady. If this persists, finish the room to save what you have."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las actualizaciones de la cámara se detuvieron. Quédate quieto. Si sigue así, termina el cuarto para guardar lo que tienes."
+          }
+        }
+      }
+    },
+    "Can't continue from the saved map": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can't continue from the saved map"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se puede continuar desde el mapa guardado"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "Check walls, floor levels, and which side of the doorway each room occupies. This is a manual placement, not an automatic match.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check walls, floor levels, and which side of the doorway each room occupies. This is a manual placement, not an automatic match."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa las paredes, el nivel del piso y de qué lado de la puerta está cada cuarto. Esta es una colocación manual, no una coincidencia automática."
+          }
+        }
+      }
+    },
+    "Choose a room already placed in the house as the reference.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a room already placed in the house as the reference."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige como referencia un cuarto que ya esté colocado en la casa."
+          }
+        }
+      }
+    },
+    "Choose an extracted 3D Model Anything room or session folder containing manifest.json. In Files, tap the shared ZIP to extract it first.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose an extracted 3D Model Anything room or session folder containing manifest.json. In Files, tap the shared ZIP to extract it first."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una carpeta extraída de cuarto o sesión de 3D Model Anything que contenga manifest.json. En Files, toca el ZIP compartido para extraerlo primero."
+          }
+        }
+      }
+    },
+    "Choose compatible doorways (within 20 cm in width) in separately captured rooms with established tracking.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose compatible doorways (within 20 cm in width) in separately captured rooms with established tracking."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige puertas compatibles (con una diferencia de ancho de hasta 20 cm) en cuartos capturados por separado y con seguimiento establecido."
+          }
+        }
+      }
+    },
+    "Choose doorway": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose doorway"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir puerta"
+          }
+        }
+      }
+    },
+    "Choose room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir cuarto"
+          }
+        }
+      }
+    },
+    "Clay": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clay"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arcilla"
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar"
+          }
+        }
+      }
+    },
+    "Collecting useful viewpoints automatically as you scan.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collecting useful viewpoints automatically as you scan."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reuniendo puntos de vista útiles de forma automática mientras escaneas."
+          }
+        }
+      }
+    },
+    "Coloring %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloring %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloreando %@"
+          }
+        }
+      }
+    },
+    "Coloring from photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloring from photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloreando con fotos"
+          }
+        }
+      }
+    },
+    "Coloring paused": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloring paused"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloración en pausa"
+          }
+        }
+      }
+    },
+    "Coloring paused · Resume": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloring paused · Resume"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloración en pausa · Reanudar"
+          }
+        }
+      }
+    },
+    "Come back any time and tap **Scan a room**, or open a saved room and choose **Continue scanning from this room**. Share from the house screen (AirDrop the .zip to your Mac).": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come back any time and tap **Scan a room**, or open a saved room and choose **Continue scanning from this room**. Share from the house screen (AirDrop the .zip to your Mac)."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve cuando quieras y toca **Escanear un cuarto**, o abre un cuarto guardado y elige **Continuar el escaneo desde este cuarto**. Comparte desde la pantalla de la casa (manda el .zip por AirDrop a tu Mac)."
+          }
+        }
+      }
+    },
+    "Compare versions": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare versions"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparar versiones"
+          }
+        }
+      }
+    },
+    "Connect %@ to": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect %@ to"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar %@ con"
+          }
+        }
+      }
+    },
+    "Connect room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar cuarto"
+          }
+        }
+      }
+    },
+    "Connect rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectar cuartos"
+          }
+        }
+      }
+    },
+    "Connected": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectado"
+          }
+        }
+      }
+    },
+    "Contact support": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact support"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contactar a soporte"
+          }
+        }
+      }
+    },
+    "Continue in %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue in %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar en %@"
+          }
+        }
+      }
+    },
+    "Continue scanning": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue scanning"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar el escaneo"
+          }
+        }
+      }
+    },
+    "Couldn't add %@ to house.json: %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't add %@ to house.json: %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo agregar %@ a house.json: %@"
+          }
+        }
+      }
+    },
+    "Couldn't read house.json.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't read house.json."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo leer house.json."
+          }
+        }
+      }
+    },
+    "Couldn't read the saved map (%@).": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't read the saved map (%@)."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo leer el mapa guardado (%@)."
+          }
+        }
+      }
+    },
+    "Couldn't save the scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't save the scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar el escaneo"
+          }
+        }
+      }
+    },
+    "Couldn't save the world map: %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't save the world map: %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar el mapa del mundo: %@"
+          }
+        }
+      }
+    },
+    "Couldn't update house.json: %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't update house.json: %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo actualizar house.json: %@"
+          }
+        }
+      }
+    },
+    "Coverage": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coverage"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cobertura"
+          }
+        }
+      }
+    },
+    "Create a house, then scan your first room. Your scans and photos stay saved on this iPhone.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a house, then scan your first room. Your scans and photos stay saved on this iPhone."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea una casa y luego escanea tu primer cuarto. Tus escaneos y fotos se quedan en este iPhone."
+          }
+        }
+      }
+    },
+    "Create and scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create and scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear y escanear"
+          }
+        }
+      }
+    },
+    "Current scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneo actual"
+          }
+        }
+      }
+    },
+    "Delete %@?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete %@?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar %@?"
+          }
+        }
+      }
+    },
+    "Delete house": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete house"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar casa"
+          }
+        }
+      }
+    },
+    "Delete house and all its scans": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete house and all its scans"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar la casa y todos sus escaneos"
+          }
+        }
+      }
+    },
+    "Delete permanently": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete permanently"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar permanentemente"
+          }
+        }
+      }
+    },
+    "Delete room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar cuarto"
+          }
+        }
+      }
+    },
+    "Delete scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar escaneo"
+          }
+        }
+      }
+    },
+    "Delete scan from %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete scan from %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar el escaneo del %@"
+          }
+        }
+      }
+    },
+    "Delete session": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete session"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar sesión"
+          }
+        }
+      }
+    },
+    "Delete this session?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this session?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar esta sesión?"
+          }
+        }
+      }
+    },
+    "Dining room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dining room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comedor"
+          }
+        }
+      }
+    },
+    "Discard session": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discard session"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar sesión"
+          }
+        }
+      }
+    },
+    "Discard session and its %lld room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discard session and its %lld room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar la sesión y su %lld cuarto"
+          }
+        }
+      }
+    },
+    "Discard session and its %lld rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discard session and its %lld rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar la sesión y sus %lld cuartos"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo"
+          }
+        }
+      }
+    },
+    "Doorway %lld · %.2f m wide": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorway %lld · %.2f m wide"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puerta %lld · %.2f m de ancho"
+          }
+        }
+      }
+    },
+    "Doorway in %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorway in %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puerta en %@"
+          }
+        }
+      }
+    },
+    "Doorway in other room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorway in other room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puerta en el otro cuarto"
+          }
+        }
+      }
+    },
+    "Doorway plan for %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doorway plan for %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plano de puertas de %@"
+          }
+        }
+      }
+    },
+    "Drag to rotate · pinch to zoom": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to rotate · pinch to zoom"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrastra para girar · pellizca para ampliar"
+          }
+        }
+      }
+    },
+    "Earlier scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Earlier scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneo anterior"
+          }
+        }
+      }
+    },
+    "Earlier scan: %@, %lldk triangles": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Earlier scan: %@, %lldk triangles"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneo anterior: %@, %lldk triángulos"
+          }
+        }
+      }
+    },
+    "Every room starts here.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every room starts here."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada cuarto empieza aquí."
+          }
+        }
+      }
+    },
+    "Finding your position. Aim at a well-lit doorway or furniture and move slowly.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finding your position. Aim at a well-lit doorway or furniture and move slowly."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscando tu posición. Apunta a una puerta o a muebles con buena luz y muévete despacio."
+          }
+        }
+      }
+    },
+    "Finish and keep saved rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish and keep saved rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar y conservar los cuartos guardados"
+          }
+        }
+      }
+    },
+    "Finish and save this scan before scanning another room. The next scan will start fresh to keep capture responsive.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish and save this scan before scanning another room. The next scan will start fresh to keep capture responsive."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termina y guarda este escaneo antes de escanear otro cuarto. El siguiente escaneo empezará de nuevo para que la captura siga respondiendo."
+          }
+        }
+      }
+    },
+    "Finish room and save what is available": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish room and save what is available"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar el cuarto y guardar lo que hay"
+          }
+        }
+      }
+    },
+    "Finish room ✓": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish room ✓"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar cuarto ✓"
+          }
+        }
+      }
+    },
+    "Finish session": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish session"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar sesión"
+          }
+        }
+      }
+    },
+    "Found it: checking the fit": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found it: checking the fit"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo: revisando el ajuste"
+          }
+        }
+      }
+    },
+    "Garage": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garage"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cochera"
+          }
+        }
+      }
+    },
+    "Getting started: move the phone slowly": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getting started: move the phone slowly"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezando: mueve el teléfono despacio"
+          }
+        }
+      }
+    },
+    "Good photo detail. Save and review for gaps.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good photo detail. Save and review for gaps."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buen detalle de foto. Guarda y revisa los huecos."
+          }
+        }
+      }
+    },
+    "Green surfaces have useful photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Green surfaces have useful photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las superficies verdes tienen fotos útiles"
+          }
+        }
+      }
+    },
+    "Hallway": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallway"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasillo"
+          }
+        }
+      }
+    },
+    "Help & privacy": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help & privacy"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayuda y privacidad"
+          }
+        }
+      }
+    },
+    "Help and privacy": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help and privacy"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayuda y privacidad"
+          }
+        }
+      }
+    },
+    "Help is unavailable": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help is unavailable"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La ayuda no está disponible"
+          }
+        }
+      }
+    },
+    "High-resolution automatic photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High-resolution automatic photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotos automáticas de alta resolución"
+          }
+        }
+      }
+    },
+    "Hold on the area you scanned before. The green should sit right on the walls and furniture.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hold on the area you scanned before. The green should sit right on the walls and furniture."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quédate en la zona que ya escaneaste. El verde debe quedar justo sobre las paredes y los muebles."
+          }
+        }
+      }
+    },
+    "House": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "House"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Casa"
+          }
+        }
+      }
+    },
+    "House options": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "House options"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opciones de la casa"
+          }
+        }
+      }
+    },
+    "Import room folder": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import room folder"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar carpeta de cuarto"
+          }
+        }
+      }
+    },
+    "Imported rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imported rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuartos importados"
+          }
+        }
+      }
+    },
+    "Inspect / compare": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inspect / compare"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inspeccionar / comparar"
+          }
+        }
+      }
+    },
+    "Inspect the textured scan before leaving. Use coverage colours in the preview to check gaps.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inspect the textured scan before leaving. Use coverage colours in the preview to check gaps."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa el escaneo con textura antes de salir. Usa los colores de cobertura en la vista previa para buscar huecos."
+          }
+        }
+      }
+    },
+    "Its rooms go back to their previous scans (rooms with no other scan disappear). Photos, meshes and depth of this session are deleted.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Its rooms go back to their previous scans (rooms with no other scan disappear). Photos, meshes and depth of this session are deleted."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sus cuartos vuelven a sus escaneos anteriores (los cuartos sin otro escaneo desaparecen). Se eliminan las fotos, las mallas y la profundidad de esta sesión."
+          }
+        }
+      }
+    },
+    "Keep scanning": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep scanning"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir escaneando"
+          }
+        }
+      }
+    },
+    "Keep this screen open while freeing storage, then retry. Files already written are kept.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep this screen open while freeing storage, then retry. Files already written are kept."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deja esta pantalla abierta mientras liberas almacenamiento y luego reintenta. Los archivos ya escritos se conservan."
+          }
+        }
+      }
+    },
+    "Keep trying": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep trying"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir intentando"
+          }
+        }
+      }
+    },
+    "Kitchen": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cocina"
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma"
+          }
+        }
+      }
+    },
+    "Laundry": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laundry"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lavandería"
+          }
+        }
+      }
+    },
+    "Leave this session?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leave this session?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Salir de esta sesión?"
+          }
+        }
+      }
+    },
+    "Lined up": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lined up"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alineado"
+          }
+        }
+      }
+    },
+    "Lined up with your earlier scan (±%.1f cm). Pick up where you left off.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lined up with your earlier scan (±%.1f cm). Pick up where you left off."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alineado con tu escaneo anterior (±%.1f cm). Sigue desde donde te quedaste."
+          }
+        }
+      }
+    },
+    "Living room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Living room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sala"
+          }
+        }
+      }
+    },
+    "Loading %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando %@"
+          }
+        }
+      }
+    },
+    "Loading %@ (%lld of %lld)": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading %@ (%lld of %lld)"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando %@ (%lld de %lld)"
+          }
+        }
+      }
+    },
+    "Loading %@…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading %@…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando %@…"
+          }
+        }
+      }
+    },
+    "Loading your earlier scan…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading your earlier scan…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando tu escaneo anterior…"
+          }
+        }
+      }
+    },
+    "Looking for a place it knows…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking for a place it knows…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscando un lugar que reconoce…"
+          }
+        }
+      }
+    },
+    "Map not saved": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Map not saved"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mapa no guardado"
+          }
+        }
+      }
+    },
+    "Map not saved yet (ARKit: %@)": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Map not saved yet (ARKit: %@)"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El mapa todavía no se guardó (ARKit: %@)"
+          }
+        }
+      }
+    },
+    "Map saved (%.0f MB%@)": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Map saved (%.0f MB%@)"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mapa guardado (%.0f MB%@)"
+          }
+        }
+      }
+    },
+    "Match a doorway with another scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Match a doorway with another scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empareja una puerta con otro escaneo"
+          }
+        }
+      }
+    },
+    "Match the same doorway in two rooms. If it wasn't captured in both scans, continue scanning from a saved room and include both sides of the doorway.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Match the same doorway in two rooms. If it wasn't captured in both scans, continue scanning from a saved room and include both sides of the doorway."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empareja la misma puerta en dos cuartos. Si no quedó capturada en ambos escaneos, continúa el escaneo desde un cuarto guardado e incluye los dos lados de la puerta."
+          }
+        }
+      }
+    },
+    "Matched": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matched"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alineado"
+          }
+        }
+      }
+    },
+    "Matched ±%.1f cm": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matched ±%.1f cm"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alineado ±%.1f cm"
+          }
+        }
+      }
+    },
+    "Measuring the room and saving photos automatically.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measuring the room and saving photos automatically."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Midiendo el cuarto y guardando fotos de forma automática."
+          }
+        }
+      }
+    },
+    "Merging rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merging rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uniendo cuartos"
+          }
+        }
+      }
+    },
+    "Merging rooms…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merging rooms…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uniendo cuartos…"
+          }
+        }
+      }
+    },
+    "Mesh": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesh"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malla"
+          }
+        }
+      }
+    },
+    "Move back from the wall": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move back from the wall"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aléjate de la pared"
+          }
+        }
+      }
+    },
+    "Move closer to the wall": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move closer to the wall"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acércate a la pared"
+          }
+        }
+      }
+    },
+    "Move room to Recently Deleted?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move room to Recently Deleted?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Mover el cuarto a Eliminados recientemente?"
+          }
+        }
+      }
+    },
+    "Move this scan to Recently Deleted?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Move this scan to Recently Deleted?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Mover este escaneo a Eliminados recientemente?"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre"
+          }
+        }
+      }
+    },
+    "Name the room to start": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name the room to start"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombra el cuarto para empezar"
+          }
+        }
+      }
+    },
+    "Needs photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needs photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faltan fotos"
+          }
+        }
+      }
+    },
+    "New house": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New house"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Casa nueva"
+          }
+        }
+      }
+    },
+    "New scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneo nuevo"
+          }
+        }
+      }
+    },
+    "No active scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No active scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay un escaneo activo"
+          }
+        }
+      }
+    },
+    "No photos to color the mesh with": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No photos to color the mesh with"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay fotos para colorear la malla"
+          }
+        }
+      }
+    },
+    "No photos, depth or coverage while paused. Tracking keeps running: keep the camera pointed at the room (not the floor or your pocket) so it doesn't lose its place.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No photos, depth or coverage while paused. Tracking keeps running: keep the camera pointed at the room (not the floor or your pocket) so it doesn't lose its place."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay fotos, profundidad ni cobertura mientras está en pausa. El seguimiento sigue activo: mantén la cámara apuntando al cuarto (no al piso ni a tu bolsillo) para que no pierda el lugar."
+          }
+        }
+      }
+    },
+    "No preview yet": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No preview yet"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía no hay vista previa"
+          }
+        }
+      }
+    },
+    "No saved mesh in %@ to check against.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No saved mesh in %@ to check against."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay una malla guardada en %@ para comparar."
+          }
+        }
+      }
+    },
+    "Not a PLY file": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not a PLY file"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No es un archivo PLY"
+          }
+        }
+      }
+    },
+    "Not connected yet": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not connected yet"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía sin conectar"
+          }
+        }
+      }
+    },
+    "Not enough detail here: aim at furniture, doorways, corners": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not enough detail here: aim at furniture, doorways, corners"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay suficiente detalle aquí: apunta a muebles, puertas o esquinas"
+          }
+        }
+      }
+    },
+    "Not enough storage. Free at least %@ on this device, then try again. Saved scans are kept.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not enough storage. Free at least %@ on this device, then try again. Saved scans are kept."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay suficiente almacenamiento. Libera al menos %@ en este dispositivo y vuelve a intentarlo. Los escaneos guardados se conservan."
+          }
+        }
+      }
+    },
+    "Nothing to preview": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing to preview"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada que previsualizar"
+          }
+        }
+      }
+    },
+    "Now pan across a corner, a door frame or some furniture: one flat wall can't show whether it's slid sideways.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Now pan across a corner, a door frame or some furniture: one flat wall can't show whether it's slid sideways."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahora gira por una esquina, un marco de puerta o algunos muebles: una sola pared plana no muestra si se deslizó de lado."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Office": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Office"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oficina"
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Settings"
+          }
+        }
+      }
+    },
+    "Open app settings": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open app settings"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir configuración de la app"
+          }
+        }
+      }
+    },
+    "Open full screen viewer": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open full screen viewer"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir el visor de pantalla completa"
+          }
+        }
+      }
+    },
+    "Opening scan…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opening scan…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abriendo el escaneo…"
+          }
+        }
+      }
+    },
+    "Our house": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Our house"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuestra casa"
+          }
+        }
+      }
+    },
+    "Outside room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outside room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuera del cuarto"
+          }
+        }
+      }
+    },
+    "Paused": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pausa"
+          }
+        }
+      }
+    },
+    "Permanently delete this room?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permanently delete this room?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar este cuarto de forma permanente?"
+          }
+        }
+      }
+    },
+    "Permissions": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permissions"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permisos"
+          }
+        }
+      }
+    },
+    "Photo": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto"
+          }
+        }
+      }
+    },
+    "Photo %lld of %lld": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo %lld of %lld"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto %lld de %lld"
+          }
+        }
+      }
+    },
+    "Photo detail": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo detail"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalle de foto"
+          }
+        }
+      }
+    },
+    "Photo detail isn't improving much. You can save and review what you have; you don't need to keep circling.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo detail isn't improving much. You can save and review what you have; you don't need to keep circling."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El detalle de foto ya casi no mejora. Puedes guardar y revisar lo que tienes; no necesitas seguir dando vueltas."
+          }
+        }
+      }
+    },
+    "Photo detail measures useful photography on observed surfaces. It is not the percentage of the room scanned.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo detail measures useful photography on observed surfaces. It is not the percentage of the room scanned."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El detalle de foto mide la fotografía útil en las superficies observadas. No es el porcentaje del cuarto escaneado."
+          }
+        }
+      }
+    },
+    "Photo detail, %lld percent of observed surfaces": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo detail, %lld percent of observed surfaces"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalle de foto, %lld por ciento de las superficies observadas"
+          }
+        }
+      }
+    },
+    "Photos are saved automatically as you move around the room.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos are saved automatically as you move around the room."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las fotos se guardan de forma automática mientras te mueves por el cuarto."
+          }
+        }
+      }
+    },
+    "Playroom": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Playroom"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuarto de juegos"
+          }
+        }
+      }
+    },
+    "Please reinstall the app update to restore its bundled help.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please reinstall the app update to restore its bundled help."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve a instalar la actualización de la app para restaurar la ayuda incluida."
+          }
+        }
+      }
+    },
+    "Point at an area you already scanned and move slowly. When the phone recognizes it, your earlier scan appears in green.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Point at an area you already scanned and move slowly. When the phone recognizes it, your earlier scan appears in green."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apunta a una zona que ya escaneaste y muévete despacio. Cuando el teléfono la reconoce, tu escaneo anterior aparece en verde."
+          }
+        }
+      }
+    },
+    "Position found. Hold steady for a moment while tracking settles.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Position found. Hold steady for a moment while tracking settles."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posición encontrada. Quédate quieto un momento mientras el seguimiento se estabiliza."
+          }
+        }
+      }
+    },
+    "Position tracking is unavailable. Hold steady with the room in view.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Position tracking is unavailable. Hold steady with the room in view."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El seguimiento de posición no está disponible. Quédate quieto con el cuarto a la vista."
+          }
+        }
+      }
+    },
+    "Position tracking stopped. Finish this room to save what is available, then finish the session and start a new capture.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Position tracking stopped. Finish this room to save what is available, then finish the session and start a new capture."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El seguimiento de posición se detuvo. Termina este cuarto para guardar lo que hay, luego termina la sesión y empieza una captura nueva."
+          }
+        }
+      }
+    },
+    "Preparing room…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing room…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando el cuarto…"
+          }
+        }
+      }
+    },
+    "Preparing…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando…"
+          }
+        }
+      }
+    },
+    "Preview": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa"
+          }
+        }
+      }
+    },
+    "Preview connection": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview connection"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previsualizar conexión"
+          }
+        }
+      }
+    },
+    "Preview house in 3D": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview house in 3D"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previsualizar la casa en 3D"
+          }
+        }
+      }
+    },
+    "Preview style": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview style"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo de vista previa"
+          }
+        }
+      }
+    },
+    "Primary bedroom": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primary bedroom"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recámara principal"
+          }
+        }
+      }
+    },
+    "Privacy policy": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy policy"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidad"
+          }
+        }
+      }
+    },
+    "Privacy policy online": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy policy online"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidad en línea"
+          }
+        }
+      }
+    },
+    "Reading the saved map.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reading the saved map."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leyendo el mapa guardado."
+          }
+        }
+      }
+    },
+    "Recently Deleted": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recently Deleted"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminados recientemente"
+          }
+        }
+      }
+    },
+    "Recolor from photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recolor from photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volver a colorear con fotos"
+          }
+        }
+      }
+    },
+    "Recording is paused. Saved photos are safe; capture resumes when your position is stable.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording is paused. Saved photos are safe; capture resumes when your position is stable."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La grabación está en pausa. Las fotos guardadas están seguras; la captura se reanuda cuando tu posición es estable."
+          }
+        }
+      }
+    },
+    "Recovering your position": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recovering your position"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuperando tu posición"
+          }
+        }
+      }
+    },
+    "Redo last room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redo last room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rehacer el último cuarto"
+          }
+        }
+      }
+    },
+    "Reducing background capture to keep scanning responsive.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reducing background capture to keep scanning responsive."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reduciendo la captura en segundo plano para que el escaneo siga respondiendo."
+          }
+        }
+      }
+    },
+    "Regular photos use camera frames for a lighter scan. High-resolution photos add processing and are limited to one request every 3 seconds while the phone is cool. The shutter always saves a regular photo.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regular photos use camera frames for a lighter scan. High-resolution photos add processing and are limited to one request every 3 seconds while the phone is cool. The shutter always saves a regular photo."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las fotos normales usan cuadros de la cámara para un escaneo más ligero. Las fotos de alta resolución agregan procesamiento y se limitan a una solicitud cada 3 segundos mientras el teléfono no está caliente. El obturador siempre guarda una foto normal."
+          }
+        }
+      }
+    },
+    "Relocalized in %@. Pick up where you left off.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relocalized in %@. Pick up where you left off."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reubicado en %@. Sigue desde donde te quedaste."
+          }
+        }
+      }
+    },
+    "Rename": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rename"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renombrar"
+          }
+        }
+      }
+    },
+    "Rename room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rename room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renombrar cuarto"
+          }
+        }
+      }
+    },
+    "Rescan: this becomes %@'s active scan (the old one stays in its history).": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rescan: this becomes %@'s active scan (the old one stays in its history)."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reescaneo: este pasa a ser el escaneo activo de %@ (el anterior se queda en su historial)."
+          }
+        }
+      }
+    },
+    "Restore": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        }
+      }
+    },
+    "Restore or permanently delete the rooms in Recently Deleted before removing this session.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore or permanently delete the rooms in Recently Deleted before removing this session."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaura o elimina de forma permanente los cuartos en Eliminados recientemente antes de quitar esta sesión."
+          }
+        }
+      }
+    },
+    "Resume %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reanudar %@"
+          }
+        }
+      }
+    },
+    "Retry saving": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry saving"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reintentar el guardado"
+          }
+        }
+      }
+    },
+    "Return to an area you just scanned and pan slowly so the phone can recognize it.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return to an area you just scanned and pan slowly so the phone can recognize it."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve a una zona que acabas de escanear y gira despacio para que el teléfono pueda reconocerla."
+          }
+        }
+      }
+    },
+    "Return to this view and pan slowly.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return to this view and pan slowly."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve a esta vista y gira despacio."
+          }
+        }
+      }
+    },
+    "Review saved room in 3D": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review saved room in 3D"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisar el cuarto guardado en 3D"
+          }
+        }
+      }
+    },
+    "Room %lld": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room %lld"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuarto %lld"
+          }
+        }
+      }
+    },
+    "Room by room. Every detail.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room by room. Every detail."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuarto por cuarto. Cada detalle."
+          }
+        }
+      }
+    },
+    "Room name": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room name"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre del cuarto"
+          }
+        }
+      }
+    },
+    "Room options": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room options"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opciones del cuarto"
+          }
+        }
+      }
+    },
+    "RoomPlan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RoomPlan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RoomPlan"
+          }
+        }
+      }
+    },
+    "RoomPlan couldn't build the layout (%@). The mesh and photos are still saved.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RoomPlan couldn't build the layout (%@). The mesh and photos are still saved."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RoomPlan no pudo construir el trazado (%@). La malla y las fotos sí se guardaron."
+          }
+        }
+      }
+    },
+    "Rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuartos"
+          }
+        }
+      }
+    },
+    "Rooms face opposite sides of doorway": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms face opposite sides of doorway"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los cuartos están en lados opuestos de la puerta"
+          }
+        }
+      }
+    },
+    "SCANNED %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SCANNED %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ESCANEADO %@"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        }
+      }
+    },
+    "Save %lld room and finish": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save %lld room and finish"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar %lld cuarto y terminar"
+          }
+        }
+      }
+    },
+    "Save %lld rooms and finish": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save %lld rooms and finish"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar %lld cuartos y terminar"
+          }
+        }
+      }
+    },
+    "Save connection": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save connection"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar conexión"
+          }
+        }
+      }
+    },
+    "Save room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar cuarto"
+          }
+        }
+      }
+    },
+    "Save what I have": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save what I have"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar lo que tengo"
+          }
+        }
+      }
+    },
+    "Saved": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardado"
+          }
+        }
+      }
+    },
+    "Saved room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuarto guardado"
+          }
+        }
+      }
+    },
+    "Saved rooms will need alignment. Use Connect room to match a doorway with another room.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved rooms will need alignment. Use Connect room to match a doorway with another room."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los cuartos guardados van a necesitar alineación. Usa Conectar cuarto para emparejar una puerta con otro cuarto."
+          }
+        }
+      }
+    },
+    "Saving %@…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saving %@…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardando %@…"
+          }
+        }
+      }
+    },
+    "Saving the map: keep the camera moving slowly…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saving the map: keep the camera moving slowly…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardando el mapa: sigue moviendo la cámara despacio…"
+          }
+        }
+      }
+    },
+    "Saving…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saving…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardando…"
+          }
+        }
+      }
+    },
+    "Scan %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanear %@"
+          }
+        }
+      }
+    },
+    "Scan a room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan a room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanear un cuarto"
+          }
+        }
+      }
+    },
+    "Scan a room to save its shape, details and photos. Add the rest of your house whenever you're ready.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan a room to save its shape, details and photos. Add the rest of your house whenever you're ready."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanea un cuarto para guardar su forma, sus detalles y sus fotos. Agrega el resto de tu casa cuando quieras."
+          }
+        }
+      }
+    },
+    "Scan each room once: as you move, a triangle mesh appears. **Green** means good photo coverage, including aligned earlier scans. **Red** needs more photos. Areas without triangles still need scanning. The white outlines are the walls, doors and windows being measured. **Photo detail** measures photography on surfaces already seen by LiDAR; it is not the percentage of the room scanned. Save and review for missing areas.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan each room once: as you move, a triangle mesh appears. **Green** means good photo coverage, including aligned earlier scans. **Red** needs more photos. Areas without triangles still need scanning. The white outlines are the walls, doors and windows being measured. **Photo detail** measures photography on surfaces already seen by LiDAR; it is not the percentage of the room scanned. Save and review for missing areas."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanea cada cuarto una vez: al moverte, aparece una malla de triángulos. **Verde** significa buena cobertura de fotos, incluidos los escaneos anteriores alineados. **Rojo** necesita más fotos. Las zonas sin triángulos todavía hay que escanearlas. Los contornos blancos son las paredes, las puertas y las ventanas que se están midiendo. **Detalle de foto** mide la fotografía en superficies que el LiDAR ya vio; no es el porcentaje del cuarto escaneado. Guarda y revisa las zonas que faltan."
+          }
+        }
+      }
+    },
+    "Scan ended": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan ended"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El escaneo terminó"
+          }
+        }
+      }
+    },
+    "Scan history": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan history"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historial de escaneos"
+          }
+        }
+      }
+    },
+    "Scan this room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan this room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanear este cuarto"
+          }
+        }
+      }
+    },
+    "Scan this room to create its first preview.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan this room to create its first preview."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanea este cuarto para crear su primera vista previa."
+          }
+        }
+      }
+    },
+    "Scanning needs a LiDAR-equipped iPhone Pro or iPad Pro. You can import, view and share existing scans on this device.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning needs a LiDAR-equipped iPhone Pro or iPad Pro. You can import, view and share existing scans on this device."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para escanear se necesita un iPhone Pro o un iPad Pro con LiDAR. En este dispositivo puedes importar, ver y compartir escaneos existentes."
+          }
+        }
+      }
+    },
+    "Scanning requires an iPhone or iPad with LiDAR. Import an extracted room folder to view and share scans on this device.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning requires an iPhone or iPad with LiDAR. Import an extracted room folder to view and share scans on this device."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para escanear se necesita un iPhone o un iPad con LiDAR. Importa una carpeta de cuarto extraída para ver y compartir los escaneos en este dispositivo."
+          }
+        }
+      }
+    },
+    "Scanning stopped: %@. Saving what is available. Finish this session before starting a new capture.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning stopped: %@. Saving what is available. Finish this session before starting a new capture."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El escaneo se detuvo: %@. Se está guardando lo que hay. Termina esta sesión antes de empezar una captura nueva."
+          }
+        }
+      }
+    },
+    "Scanning, importing & sharing": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning, importing & sharing"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanear, importar y compartir"
+          }
+        }
+      }
+    },
+    "Scans are approximate. Verify measurements before construction or other precision work.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scans are approximate. Verify measurements before construction or other precision work."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los escaneos son aproximados. Verifica las medidas antes de usarlas en construcción u otro trabajo de precisión."
+          }
+        }
+      }
+    },
+    "Selected scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneo seleccionado"
+          }
+        }
+      }
+    },
+    "Sessions": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sessions"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesiones"
+          }
+        }
+      }
+    },
+    "Sessions · %lld": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sessions · %lld"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesiones · %lld"
+          }
+        }
+      }
+    },
+    "Share": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir"
+          }
+        }
+      }
+    },
+    "Share room": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share room"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir cuarto"
+          }
+        }
+      }
+    },
+    "Share whole house": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share whole house"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir toda la casa"
+          }
+        }
+      }
+    },
+    "Show only…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show only…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar solo…"
+          }
+        }
+      }
+    },
+    "Slow down": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow down"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más despacio"
+          }
+        }
+      }
+    },
+    "Slow down and hold steady. Keep a familiar doorway or furniture in view.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slow down and hold steady. Keep a familiar doorway or furniture in view."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ve más despacio y quédate quieto. Mantén a la vista una puerta o un mueble que reconozcas."
+          }
+        }
+      }
+    },
+    "Some recording files could not be saved: %@. Free storage and finish the session to retry.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some recording files could not be saved: %@. Free storage and finish the session to retry."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron guardar algunos archivos de la grabación: %@. Libera almacenamiento y termina la sesión para reintentar."
+          }
+        }
+      }
+    },
+    "Something went wrong": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something went wrong"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal"
+          }
+        }
+      }
+    },
+    "Spots you scanned before:": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spots you scanned before:"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lugares que ya escaneaste:"
+          }
+        }
+      }
+    },
+    "Start a fresh scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start a fresh scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar un escaneo nuevo"
+          }
+        }
+      }
+    },
+    "Start in this room so the phone can recognize your surroundings.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start in this room so the phone can recognize your surroundings."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza en este cuarto para que el teléfono pueda reconocer el lugar."
+          }
+        }
+      }
+    },
+    "Start with a space you know.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start with a space you know."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza por un espacio que conoces."
+          }
+        }
+      }
+    },
+    "Starting LiDAR…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starting LiDAR…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciando LiDAR…"
+          }
+        }
+      }
+    },
+    "Starting the camera…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starting the camera…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciando la cámara…"
+          }
+        }
+      }
+    },
+    "Statistics": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistics"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estadísticas"
+          }
+        }
+      }
+    },
+    "Still can't find where you are.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Still can't find where you are."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía no encuentra dónde estás."
+          }
+        }
+      }
+    },
+    "Storage is almost full. Recording is paused. Finish this room to save what is available, then free space before continuing.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storage is almost full. Recording is paused. Finish this room to save what is available, then free space before continuing."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El almacenamiento está casi lleno. La grabación está en pausa. Termina este cuarto para guardar lo que hay y luego libera espacio antes de continuar."
+          }
+        }
+      }
+    },
+    "Surroundings": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Surroundings"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alrededores"
+          }
+        }
+      }
+    },
+    "Take reference photo": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take reference photo"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomar foto de referencia"
+          }
+        }
+      }
+    },
+    "Tap a camera to jump to it": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap a camera to jump to it"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca una cámara para ir a ella"
+          }
+        }
+      }
+    },
+    "Tap a point on the scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap a point on the scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca un punto del escaneo"
+          }
+        }
+      }
+    },
+    "Tap a second point": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap a second point"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca un segundo punto"
+          }
+        }
+      }
+    },
+    "Tap the matching doorway numbers on each room plan. Widths help distinguish similar openings.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the matching doorway numbers on each room plan. Widths help distinguish similar openings."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca los números de puerta que coinciden en el plano de cada cuarto. Los anchos ayudan a distinguir aberturas parecidas."
+          }
+        }
+      }
+    },
+    "That room is no longer available. Start a new scan.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That room is no longer available. Start a new scan."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese cuarto ya no está disponible. Empieza un escaneo nuevo."
+          }
+        }
+      }
+    },
+    "The PLY file is truncated": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The PLY file is truncated"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El archivo PLY está truncado"
+          }
+        }
+      }
+    },
+    "The camera is used only while capturing rooms. Importing and reviewing saved scans does not require camera access.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The camera is used only while capturing rooms. Importing and reviewing saved scans does not require camera access."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La cámara se usa solo mientras se capturan cuartos. Importar y revisar escaneos guardados no requiere acceso a la cámara."
+          }
+        }
+      }
+    },
+    "The earlier scan doesn't line up any more (tracking may have reset). Finish this session and use Continue again so new rooms land in the right place.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The earlier scan doesn't line up any more (tracking may have reset). Finish this session and use Continue again so new rooms land in the right place."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El escaneo anterior ya no coincide (el seguimiento puede haberse reiniciado). Termina esta sesión y usa Continuar otra vez para que los cuartos nuevos queden en el lugar correcto."
+          }
+        }
+      }
+    },
+    "The mesh is empty": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The mesh is empty"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La malla está vacía"
+          }
+        }
+      }
+    },
+    "The phone lost its position. The available room data has been saved. Finish this session, then start a new capture from the house screen.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The phone lost its position. The available room data has been saved. Finish this session, then start a new capture from the house screen."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teléfono perdió su posición. Los datos disponibles del cuarto se guardaron. Termina esta sesión y luego empieza una captura nueva desde la pantalla de la casa."
+          }
+        }
+      }
+    },
+    "The phone thinks it knows this place, but the green doesn't sit on the real surfaces. Try again from a spot with lots of detail, or start unaligned.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The phone thinks it knows this place, but the green doesn't sit on the real surfaces. Try again from a spot with lots of detail, or start unaligned."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El teléfono cree que reconoce este lugar, pero el verde no queda sobre las superficies reales. Inténtalo de nuevo desde un punto con mucho detalle, o empieza sin alinear."
+          }
+        }
+      }
+    },
+    "The scan index could not be saved: %@. Free storage and finish the session to retry.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The scan index could not be saved: %@. Free storage and finish the session to retry."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar el índice del escaneo: %@. Libera almacenamiento y termina la sesión para reintentar."
+          }
+        }
+      }
+    },
+    "Then scan your first room. You can add more rooms later.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Then scan your first room. You can add more rooms later."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luego escanea tu primer cuarto. Puedes agregar más cuartos después."
+          }
+        }
+      }
+    },
+    "These rooms already share a tracking frame.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "These rooms already share a tracking frame."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estos cuartos ya comparten un marco de seguimiento."
+          }
+        }
+      }
+    },
+    "This cannot be undone. Shared recordings needed by other rooms are kept.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This cannot be undone. Shared recordings needed by other rooms are kept."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto no se puede deshacer. Las grabaciones compartidas que otros cuartos necesitan se conservan."
+          }
+        }
+      }
+    },
+    "This doesn't line up": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This doesn't line up"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto no coincide"
+          }
+        }
+      }
+    },
+    "This folder contains unsupported file links. Import an original 3D Model Anything export.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This folder contains unsupported file links. Import an original 3D Model Anything export."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta carpeta contiene enlaces de archivo no compatibles. Importa una exportación original de 3D Model Anything."
+          }
+        }
+      }
+    },
+    "This removes every session, photo and mesh of this house from the phone.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This removes every session, photo and mesh of this house from the phone."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto quita del teléfono cada sesión, foto y malla de esta casa."
+          }
+        }
+      }
+    },
+    "This scan has no LiDAR mesh or RoomPlan model yet.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This scan has no LiDAR mesh or RoomPlan model yet."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este escaneo todavía no tiene una malla LiDAR ni un modelo de RoomPlan."
+          }
+        }
+      }
+    },
+    "This scan is saved. Finish this session, then tap Scan a room to continue with a fresh capture.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This scan is saved. Finish this session, then tap Scan a room to continue with a fresh capture."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este escaneo está guardado. Termina esta sesión y luego toca Escanear un cuarto para seguir con una captura nueva."
+          }
+        }
+      }
+    },
+    "Tracking": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tracking"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguimiento"
+          }
+        }
+      }
+    },
+    "Tracking limited": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tracking limited"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguimiento limitado"
+          }
+        }
+      }
+    },
+    "Tracking recovered. Continue slowly.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tracking recovered. Continue slowly."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El seguimiento se recuperó. Continúa despacio."
+          }
+        }
+      }
+    },
+    "Tracking recovered. Tap Resume when ready.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tracking recovered. Tap Resume when ready."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El seguimiento se recuperó. Toca Reanudar cuando estés listo."
+          }
+        }
+      }
+    },
+    "Try again": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intentar de nuevo"
+          }
+        }
+      }
+    },
+    "Turn on more lights": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on more lights"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enciende más luces"
+          }
+        }
+      }
+    },
+    "Unsupported PLY: %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unsupported PLY: %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PLY no compatible: %@"
+          }
+        }
+      }
+    },
+    "Updated %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updated %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizado %@"
+          }
+        }
+      }
+    },
+    "Use this scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use this scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar este escaneo"
+          }
+        }
+      }
+    },
+    "Version %@ (%@)": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@ (%@)"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versión %@ (%@)"
+          }
+        }
+      }
+    },
+    "Walk into the next room, then start it. Stay in this session so the rooms line up.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk into the next room, then start it. Stay in this session so the rooms line up."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entra al siguiente cuarto y luego inícialo. Quédate en esta sesión para que los cuartos queden alineados."
+          }
+        }
+      }
+    },
+    "Which room are you in?": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which room are you in?"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿En qué cuarto estás?"
+          }
+        }
+      }
+    },
+    "You can restore this room and its scans from Recently Deleted. Nothing is erased yet.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can restore this room and its scans from Recently Deleted. Nothing is erased yet."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes restaurar este cuarto y sus escaneos desde Eliminados recientemente. Todavía no se borra nada."
+          }
+        }
+      }
+    },
+    "You can restore this room and its scans from the house's Recently Deleted section.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can restore this room and its scans from the house's Recently Deleted section."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes restaurar este cuarto y sus escaneos desde la sección Eliminados recientemente de la casa."
+          }
+        }
+      }
+    },
+    "You can still scan: the session gets its own frame. Use Connect room afterward to align it with another room.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can still scan: the session gets its own frame. Use Connect room afterward to align it with another room."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía puedes escanear: la sesión tiene su propio marco. Después usa Conectar cuarto para alinearla con otro cuarto."
+          }
+        }
+      }
+    },
+    "You're lined up with %@. The faint green is what you scanned before. Scan a new room, or rescan one to replace it.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're lined up with %@. The faint green is what you scanned before. Scan a new room, or rescan one to replace it."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya estás alineado con %@. El verde tenue es lo que escaneaste antes. Escanea un cuarto nuevo o vuelve a escanear uno para reemplazarlo."
+          }
+        }
+      }
+    },
+    "You're lined up with %@. The faint green is what you scanned before; surfaces its %@ already cover start out green. Scan a new room, or rescan one to replace it.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're lined up with %@. The faint green is what you scanned before; surfaces its %@ already cover start out green. Scan a new room, or rescan one to replace it."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya estás alineado con %@. El verde tenue es lo que escaneaste antes. Las superficies que sus %@ ya cubren empiezan en verde. Escanea un cuarto nuevo o vuelve a escanear uno para reemplazarlo."
+          }
+        }
+      }
+    },
+    "Zipping…": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zipping…"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprimiendo…"
+          }
+        }
+      }
+    },
+    "captured": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "captured"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "capturado"
+          }
+        }
+      }
+    },
+    "detail photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "detail photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fotos de detalle"
+          }
+        }
+      }
+    },
+    "element %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "element %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "elemento %@"
+          }
+        }
+      }
+    },
+    "face index list must be uchar + (u)int": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "face index list must be uchar + (u)int"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "la lista de índices de caras debe ser uchar + (u)int"
+          }
+        }
+      }
+    },
+    "face property before the index list": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "face property before the index list"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "propiedad de cara antes de la lista de índices"
+          }
+        }
+      }
+    },
+    "format %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "format %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "formato %@"
+          }
+        }
+      }
+    },
+    "house": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "house"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "casa"
+          }
+        }
+      }
+    },
+    "last %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "last %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "último %@"
+          }
+        }
+      }
+    },
+    "map": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "map"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mapa"
+          }
+        }
+      }
+    },
+    "needs photos": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "needs photos"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "faltan fotos"
+          }
+        }
+      }
+    },
+    "no PLY header": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no PLY header"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no hay encabezado PLY"
+          }
+        }
+      }
+    },
+    "no face list": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no face list"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no hay lista de caras"
+          }
+        }
+      }
+    },
+    "no rooms": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no rooms"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sin cuartos"
+          }
+        }
+      }
+    },
+    "no x/y/z": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no x/y/z"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no hay x/y/z"
+          }
+        }
+      }
+    },
+    "not binary little-endian": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "not binary little-endian"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no es binary little-endian"
+          }
+        }
+      }
+    },
+    "not measured": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "not measured"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sin medir"
+          }
+        }
+      }
+    },
+    "photo detail": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "photo detail"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "detalle de foto"
+          }
+        }
+      }
+    },
+    "second face list": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "second face list"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "segunda lista de caras"
+          }
+        }
+      }
+    },
+    "truncated vertices": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "truncated vertices"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "vértices truncados"
+          }
+        }
+      }
+    },
+    "unsupported face list": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "unsupported face list"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lista de caras no compatible"
+          }
+        }
+      }
+    },
+    "unsupported vertex property %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "unsupported vertex property %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "propiedad de vértice no compatible: %@"
+          }
+        }
+      }
+    },
+    "vertex property %@": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "vertex property %@"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "propiedad de vértice %@"
+          }
+        }
+      }
+    },
+    "x must be float/double": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "x must be float/double"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "x debe ser float o double"
+          }
+        }
+      }
+    },
+    "your earlier scan": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "your earlier scan"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tu escaneo anterior"
+          }
+        }
+      }
+    },
+    "• Bare walls and floors don't work; aim at shelves, pictures, door frames.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Bare walls and floors don't work; aim at shelves, pictures, door frames."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Las paredes y los pisos despejados no sirven; apunta a repisas, cuadros y marcos de puerta."
+          }
+        }
+      }
+    },
+    "• Stand where you scanned before, like a doorway or a corner with furniture, 1–2 m back, and pan slowly.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Stand where you scanned before, like a doorway or a corner with furniture, 1–2 m back, and pan slowly."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Párate donde escaneaste antes, como una puerta o una esquina con muebles, a 1–2 m, y gira despacio."
+          }
+        }
+      }
+    },
+    "• Things moved since last time? Aim at something that didn't.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Things moved since last time? Aim at something that didn't."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• ¿Se movieron cosas desde la última vez? Apunta a algo que no se haya movido."
+          }
+        }
+      }
+    },
+    "• Turn on the same lights as last time.": {
+      "localizations": {
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Turn on the same lights as last time."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "• Enciende las mismas luces que la última vez."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
